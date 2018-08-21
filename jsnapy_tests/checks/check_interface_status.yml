@@ -1,0 +1,23 @@
+check_interface_status:
+- command: show interfaces descriptions
+
+- iterate:
+    id: name
+    xpath: //interface-information/physical-interface
+    tests:
+    - no-diff: admin-status
+      err: 'The admin status of  physical-interface  {{ id_0 }} has changed from "{{ pre["admin-status"] }}" to "{{ post["admin-status"] }}".'
+      info: 'The admin status for  physical-interface  {{ id_0 }} has not changed.'
+    - no-diff: oper-status
+      err: 'The oper status of  physical-interface  {{ id_0 }} has changed from "{{ post["admin-status"] }}" to "{{ post["oper-status"] }}".'
+      info: 'The oper status for   physical-interface  {{ id_0 }} has not changed' 
+- iterate:
+    id: name
+    xpath: //interface-information/logical-interface
+    tests:
+    - no-diff: admin-status
+      err: 'The admin status of  logical-interface  {{ id_0 }} has changed from "{{ pre["admin-status"] }}" to "{{ post["admin-status"] }}".'
+      info: 'The admin status for  logical-interface  {{ id_0 }} has not changed.'
+    - no-diff: oper-status
+      err: 'The oper status of  logical-interface  {{ id_0 }} has changed from "{{ post["admin-status"] }}" to "{{ post["oper-status"] }}".'
+      info: 'The oper status for   logical-interface  {{ id_0 }} has not changed' 

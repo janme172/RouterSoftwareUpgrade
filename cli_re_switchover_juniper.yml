@@ -1,0 +1,8 @@
+---
+
+- import_playbook: user_confirmation_before_play_start.yml
+  vars:
+    actions: ['Take Jsanpy PRE snapshots', 'SET the ISIS overload', 'Attempt RE Switchover', 'Delete ISIS overload', 'Take Jsnapy POST snaphots', 'Compare Jsnapy PRE and POST snapshots']
+
+- import_playbook: base_re_switchover_juniper.yml
+

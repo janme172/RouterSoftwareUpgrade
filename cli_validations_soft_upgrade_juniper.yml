@@ -1,0 +1,10 @@
+---
+
+# Important Note: Please do not chnage the names of tasks. Let them remain as they are.
+
+- import_playbook: user_confirmation_before_play_start.yml
+  vars:
+    actions: ['Display Devices Information', 'Validate all interfaces to be up']
+
+- import_playbook: base_validations_soft_upgrade_juniper.yml
+

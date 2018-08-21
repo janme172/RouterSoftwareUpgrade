@@ -1,0 +1,13 @@
+---
+- name: Set backup RE variable to re0 if RE0 is the backup RE
+  set_fact:
+    backup_re: "re0"
+  when:  ('junos' in ansible_facts) and ('RE0' in ansible_facts.junos) and (ansible_facts.junos.RE0 not in  ['', 'None', 'none']) and (ansible_facts.junos.RE0.mastership_state == 'backup')
+
+- name: Set backup RE variable to re1 if RE1 is the backup RE
+  set_fact:
+    backup_re: "re1"
+  when:  ('junos' in ansible_facts) and ('RE1' in ansible_facts.junos) and (ansible_facts.junos.RE1 not in  ['', 'None', 'none']) and (ansible_facts.junos.RE1.mastership_state == 'backup')
+
+  
+

@@ -1,0 +1,84 @@
+2018-05-29 08:32:59,369 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-29 08:32:59,896 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-29 08:32:59,897 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-29 08:33:01,657 - ncclient.transport.session - INFO - initialized: session-id=19542 | server_capabilities=<dictionary-keyiterator object at 0x7feb46eaf838>
+2018-05-29 08:33:01,677 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-29 08:33:02,204 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe32 *****************************
+2018-05-29 08:33:02,204 - jnpr.jsnapy.check - INFO - Tests Included: validate_interface_status 
+2018-05-29 08:33:02,204 - jnpr.jsnapy.check - INFO - [34m******************* Command: show interfaces descriptions *******************
+2018-05-29 08:33:02,215 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is equal to "up" [ 8 matched ]
+2018-05-29 08:33:02,218 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  ge-0/2/1 is not "up". It is "down".
+2018-05-29 08:33:02,222 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  xe-2/0/3 is not "up". It is "down".
+2018-05-29 08:33:02,225 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "oper-status" is not equal to "up" [ 6 matched / 2 failed ]
+2018-05-29 08:33:02,338 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is equal to "up" [ 109 matched ]
+2018-05-29 08:33:02,442 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/2/1.100 is not "up". It is "down".
+2018-05-29 08:33:02,443 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  lt-1/0/0.100 is not "up". It is "down".
+2018-05-29 08:33:02,446 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  xe-2/0/3.2001 is not "up". It is "down".
+2018-05-29 08:33:02,447 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  xe-2/0/3.2002 is not "up". It is "down".
+2018-05-29 08:33:02,449 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  xe-2/0/3.2003 is not "up". It is "down".
+2018-05-29 08:33:02,454 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "oper-status" is not equal to "up" [ 104 matched / 5 failed ]
+2018-05-29 08:33:02,455 - jnpr.jsnapy.operator - INFO - [34m------------------------------- Final Result!! -------------------------------
+2018-05-29 08:33:02,455 - jnpr.jsnapy.operator - INFO - [31mvalidate_interface_status : Failed
+2018-05-29 08:33:02,455 - jnpr.jsnapy.operator - INFO - [32mTotal No of tests passed: 2
+2018-05-29 08:33:02,455 - jnpr.jsnapy.operator - INFO - [31mTotal No of tests failed: 2 
+2018-05-29 08:33:02,456 - jnpr.jsnapy.operator - INFO - [31m[1mOverall Tests failed!!! 
+2018-05-29 08:34:44,425 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-29 08:34:45,168 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-29 08:34:45,169 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-29 08:34:46,881 - ncclient.transport.session - INFO - initialized: session-id=19624 | server_capabilities=<dictionary-keyiterator object at 0x7f1efcad2838>
+2018-05-29 08:34:46,901 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-29 08:34:47,427 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe32 *****************************
+2018-05-29 08:34:47,427 - jnpr.jsnapy.check - INFO - Tests Included: validate_interface_status 
+2018-05-29 08:34:47,428 - jnpr.jsnapy.check - INFO - [34m******************* Command: show interfaces descriptions *******************
+2018-05-29 08:34:47,438 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is equal to "up" [ 8 matched ]
+2018-05-29 08:34:47,441 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  ge-0/2/1 is not "up". It is "down".
+2018-05-29 08:34:47,445 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  xe-2/0/3 is not "up". It is "down".
+2018-05-29 08:34:47,448 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "oper-status" is not equal to "up" [ 6 matched / 2 failed ]
+2018-05-29 08:34:47,561 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is equal to "up" [ 109 matched ]
+2018-05-29 08:34:47,665 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/2/1.100 is not "up". It is "down".
+2018-05-29 08:34:47,667 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  lt-1/0/0.100 is not "up". It is "down".
+2018-05-29 08:34:47,669 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  xe-2/0/3.2001 is not "up". It is "down".
+2018-05-29 08:34:47,671 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  xe-2/0/3.2002 is not "up". It is "down".
+2018-05-29 08:34:47,672 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  xe-2/0/3.2003 is not "up". It is "down".
+2018-05-29 08:34:47,678 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "oper-status" is not equal to "up" [ 104 matched / 5 failed ]
+2018-05-29 08:34:47,679 - jnpr.jsnapy.operator - INFO - [34m------------------------------- Final Result!! -------------------------------
+2018-05-29 08:34:47,679 - jnpr.jsnapy.operator - INFO - [31mvalidate_interface_status : Failed
+2018-05-29 08:34:47,679 - jnpr.jsnapy.operator - INFO - [32mTotal No of tests passed: 2
+2018-05-29 08:34:47,679 - jnpr.jsnapy.operator - INFO - [31mTotal No of tests failed: 2 
+2018-05-29 08:34:47,679 - jnpr.jsnapy.operator - INFO - [31m[1mOverall Tests failed!!! 

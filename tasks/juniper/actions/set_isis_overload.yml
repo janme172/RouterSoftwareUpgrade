@@ -1,0 +1,8 @@
+---
+- name: "Set ISIS Overload - {{ task_name| default('')}}"
+  juniper_junos_config:
+    load: 'set'
+    lines:
+      - "set protocols isis overload"
+    timeout: "{{ timeout | default(180) }}"
+    provider: "{{ provider | default({}) }}"

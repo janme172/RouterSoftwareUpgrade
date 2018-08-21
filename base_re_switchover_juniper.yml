@@ -1,0 +1,240 @@
+---
+- name: Playbook for RE Switchover.
+  hosts: all
+  max_fail_percentage: 100
+  connection: local
+  gather_facts: no
+
+  # include the customized junos role
+  roles:
+    - Juniper.junos
+
+  # Take user Inputs
+  vars_prompt:
+    - name: "device_user_name"
+      prompt: "\n\nTDC Username"
+      private: no
+      default: "{{lookup('env','USER')}}"
+    - name: "device_user_passwd"
+      prompt: "password"
+      private: yes
+    - name: 'expected_sfw_ver_bkp_re'
+      prompt: "Expected Software version on Backup RE"
+      private: no
+
+  # Define playbook variables.
+  vars:
+    jsnapy_parent_test_dir: "jsnapy_tests"
+    jsnapy_pre_post_test_files: [check_interface_status.yml, check_isis.yml, check_bgp.yml, check_ldp.yml]
+    provider_details:
+      username: "{{ device_user_name }}"
+      password: "{{ device_user_passwd  }}"
+      host: "{{ inventory_hostname }}"
+
+  # Perform PRE Activities
+  pre_tasks:
+    # Set Date and logging details
+    - import_tasks: tasks/common/set/fact/start_date_and_time.yml
+    - import_tasks: tasks/common/set/fact/logging_details.yml
+
+  # Tasks to perform
+  tasks:
+
+    - block:
+        # Gather the router facts/info. No configuration data will be gathered.
+        - import_tasks: tasks/juniper/facts/gather_facts_without_config.yml
+      rescue:
+        # Alert user about abort of play as únable gather the facts.
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as there was issue while gathering info/fácts about the device."
+            abort_task_name: "Issue in info/fact gathering."
+      vars:
+        provider: "{{provider_details}}"
+        
+    # Dummy task for displaying the device info table
+    - import_tasks: tasks/juniper/display/device_facts_info.yml
+
+    # Abort and Alert user if Single RE device
+    - import_tasks: tasks/juniper/actions/abort_for_single_RE.yml
+
+    - block:
+        # Get the Master RE before RE Switchover
+        - name: Get the Master RE before RE Switchover & Backup RE #& Expected Software version version on backup RE
+          set_fact:
+            master_re_before_switchover: "{{ ansible_facts.junos.master }}"
+            bkp_re: "{% if ansible_facts.junos.RE0.mastership_state == 'backup' %}re0{% elif  ansible_facts.junos.RE1.mastership_state == 'backup' %}re1{% else %}{% endif %}"
+#            expected_sfw_ver_bkp_re: "{{expected_sfw_ver_bkp_re}}"
+      rescue:
+        # Abort as master_re_before_switchover variable not set.
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as unable to set Master RE variable before switchover."
+            abort_task_name: "for devices having single RE."
+
+    - block:
+        - name: Aborting - For devices not having the expected software version on backup RE
+          fail:
+            msg: "Unexpected software version on backup RE: {{ansible_facts.junos.junos_info[bkp_re].text}}. Expected version: {{expected_sfw_ver_bkp_re|trim}}"
+          when: ansible_facts.junos.junos_info[bkp_re].text != expected_sfw_ver_bkp_re|trim
+
+    - block:
+        # Take Pre Snapshot based on Jsanpy test files
+        - import_tasks: tasks/juniper/jsnapy/checks/pre/checks.yml
+          vars:
+            #jsnapy_test_files: [check_interface_status.yml, check_isis.yml, check_bgp.yml, check_ldp.yml]
+            jsnapy_test_files: "{{ jsnapy_pre_post_test_files }}"
+            jsnapy_task_name: "interface, isis, bgp, ldp"
+            jsnapy_test_dir: "{{ jsnapy_parent_test_dir }}/checks/"
+            jsnapy_log_dir: "{{ play_log_dir }}/jsnapy/checks/pre/"
+      rescue:
+        # Abort as unable to take pre snapshots
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as unable to take PRE Jsnapy snapshots."
+            abort_task_name: "Issue while taking Jsnapy PRE snapshots"
+      vars:
+          provider: "{{provider_details}}"
+
+    - block:
+        # Set the ISIS overload
+        - import_tasks: tasks/juniper/actions/set_isis_overload.yml
+          vars:
+            task_name: "Before RE Swictover"
+      rescue:
+        # Abort incase unable to set ISIS overload
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as unable to set the ISIS overload."
+            abort_task_name: "ISIS Overload not set"
+      vars:
+          provider: "{{provider_details}}"
+
+    - name: Wiat for Traffic Off loading
+      pause:
+        minutes: 5
+
+    - block:
+        # Attempt RE Switchover
+        - import_tasks: tasks/juniper/actions/switch_REs.yml
+      rescue:
+        - block:
+            # Attempt to Delete the ISIS Overload set earlier in case of RE switchover failure
+            - import_tasks: tasks/juniper/actions/delete_isis_overload.yml
+              vars:
+                task_name: "After Error in RE Switchover attempt"
+          rescue:
+            # Abort incase unable to delete isis overload
+            - import_tasks: tasks/common/display/message.yml
+              vars:
+                message_to_display: "For host {{ inventory_hostname }} there was an issue in deleting the ISIS overload after failure in RE Switchover attempt."
+                message_task_name: "Message for issue in ISIS overload delete"
+
+       # Alert user about failed RE switchover.
+        - import_tasks: tasks/common/display/message.yml
+          vars:
+            message_to_display: "For host {{ inventory_hostname }} there was an issue in RE switchover. Unexpected response received. Post checks and validations will continue."
+            message_task_name: "Message for issue in RE Switchover attempt"
+      vars:
+          provider: "{{provider_details}}"
+
+    - block:
+        # Wait for router connectivity before continuing to next task.
+        - name: Waiting for connectivity to router again
+          wait_for:
+            host: "{{ inventory_hostname }}"
+            port: 830
+            timeout: 500
+      rescue:
+        # Alert and abort in case didn't showed up
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as it didn't showed up after RE switchover. Consider manually deleting of ISIS overload."
+            abort_task_name: "Device didn't showed up after RE Switchover."
+
+
+    # wait for configuration to be loaded into the device. Avoids ConfigLoadError
+    - name: Wait for Device to be ready
+      pause:
+        minutes: 5
+
+    - block:
+        # Delete the ISIS Overload after RE switchover attempt
+        - import_tasks: tasks/juniper/actions/delete_isis_overload.yml
+          vars:
+            task_name: "After RE Switchover attempt"
+      rescue:
+       # Alert user to manually delete the ISIS overload incase of failure.
+        - import_tasks: tasks/common/display/message.yml
+          vars:
+            message_to_display: "For host {{ inventory_hostname }} there was an issue in deleting the ISIS overload. Consider manually deleting of ISIS overload."
+            message_task_name: "Message for issue in deleting the ISIS oveload"
+      vars:
+          provider: "{{provider_details}}"
+
+    - block:
+          # Gather the router facts/info after RE switchover attempt. No configuration data will be gathered.
+          - import_tasks: tasks/juniper/facts/gather_facts_without_config.yml
+      rescue:
+        # Alert user about abort of play as únable gather the facts.
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as there was issue while gathering info/fácts about the device."
+            abort_task_name: "Issue in info/fact gathering."
+      vars:
+          provider: "{{provider_details}}"
+
+    # Dummy task for displaying the device info table
+    - import_tasks: tasks/juniper/display/device_facts_info.yml
+
+    - block:
+        # Get master RE after the RE switchover attempt
+        - name: Get the Master RE after RE Switchover
+          set_fact:
+            master_re_after_switchover: "{{ ansible_facts.junos.master }}"
+            
+      rescue:
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as unable set the current master RE variable."
+            abort_task_name: "Unable to detrmine the Master RE after RE Switchover attempt"
+
+    - block:
+        # Take Post Snapshot of commands based on Jsanpy test files
+        - import_tasks: tasks/juniper/jsnapy/checks/post/checks.yml
+          vars:
+           jsnapy_test_files: "{{ jsnapy_pre_post_test_files }}"
+           jsnapy_task_name: "interface, isis, bgp"
+           jsnapy_test_dir: "{{ jsnapy_parent_test_dir }}/checks/"
+           jsnapy_log_dir: "{{ play_log_dir }}/jsnapy/checks/post/"
+      rescue:
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as issue while taking the Jsnapy POST snapshots."
+            abort_task_name: "Issue in taking Jsnapy POST snapshot."
+      vars:
+          provider: "{{provider_details}}"
+
+    - block:
+        # Compare the Pre and Post Snapshots for any changes based on Jsanpy test files
+        - import_tasks: tasks/juniper/jsnapy/checks/compare/checks.yml
+          vars:
+            jsnapy_test_files: "{{ jsnapy_pre_post_test_files }}"
+            jsnapy_task_name: "interface, isis, bgp"
+            jsnapy_test_dir: "{{ jsnapy_parent_test_dir }}/checks/"
+            jsnapy_log_dir: "{{ play_log_dir }}/jsnapy/checks/compare/"
+      rescue:
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as issue while comparing Jsnapy PRE and POST snapshots."
+            abort_task_name: "Issue in comparing the Jsnapy PRE and POST snapshots."
+      vars:
+          provider: "{{provider_details}}"
+
+    # Dummy task for displaying the RE switchover summary
+    - name: "Display RE Switchover Summary"
+      debug:
+        msg: 'Display RE Switchover Summary'
+      no_log: True
+      run_once: yes
+

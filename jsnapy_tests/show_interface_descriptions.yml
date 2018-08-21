@@ -1,0 +1,15 @@
+show_interfaces_descriptions:
+- command: show interfaces descriptions
+- iterate:
+    id: name
+    xpath: physical-interface
+    tests:
+    - no-diff: admin-status
+      err: '   ERROR: the admin status of interface {{id_0}} has changed: PRE: {{pre["admin-status"]}}
+        / POST: {{post["admin-status"]}}'
+      info: 'Admin status have not changed for physical interface {{ pre["name"] }}.'
+    - no-diff: oper-status
+      err: '   ERROR: the oper status of interface {{id_0}} has changed: PRE: {{pre["oper-status"]}}
+        / POST: {{post["oper-status"]}}'
+      info: 'Operational status have not changed for  physical interface {{ pre["name"] }}.'
+

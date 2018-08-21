@@ -1,0 +1,160 @@
+---
+
+#- import_playbook: playbooks/user_confirmation_before_play_start.yml
+#  vars:
+#    actions: ['Take Jsanpy PRE snapshots', 'SET the ISIS overload', 'Attempt RE Switchover', 'Delete ISIS overload', 'Take Jsnapy POST snaphots', 'Compare Jsnapy PRE and POST snapshots']
+
+- name: Playbook for performing individual actions.
+  hosts: "{{ run_on_hosts | default('all') }}"
+  max_fail_percentage: 100
+  connection: local
+  gather_facts: no
+
+  # include the customized junos role
+  roles:
+    - Juniper.junos
+
+  # Take user Inputs
+  vars_prompt:
+    - name: "device_user_name"
+      prompt: "\n\nTDC Username"
+      private: no
+      default: "{{lookup('env','USER')}}"
+    - name: "device_user_passwd"
+      prompt: "password"
+      private: yes
+
+  # Define the variables.
+  vars:
+    mode: 'cli'
+    awx_available_tasks:
+      'Enable GRES and NSR': 1
+      'Disable GRES and NSR': 2
+      'Set ISIS Overload': 3
+      'Delete ISIS Overload': 4 
+    cli_available_task_choices: {1: 'Enable GRES and NSR - Juniper', 2: 'Disable GRES and NSR - Juniper', 3: 'Set ISIS Overload - Juniper', 4: 'Delete ISIS Overload - Juniper'}
+    available_individual_action_includes: {1: 'tasks/juniper/actions/enable_GRES_and_NSR.yml', 2: 'tasks/juniper/actions/disable_GRES_and_NSR.yml', 3: 'tasks/juniper/actions/set_isis_overload.yml', 4: 'tasks/juniper/actions/delete_isis_overload.yml'}
+    provider_details:
+      username: "{{ device_user_name }}"
+      password: "{{ device_user_passwd  }}"
+      host: "{{ inventory_hostname }}"
+
+  # All Tasks
+  pre_tasks:
+
+    - block:
+        - name: Try to get the user choice - CLI mode
+          set_fact:
+              user_selected_task_choice: "{{ hostvars.localhost.user_selected_task_choice }}"
+          when: mode != "awx"
+
+        - name: User Confirmation
+          pause:
+            prompt: "\e[32m\e[1m-------------------\nPlaybook Details: \n-------------------\n\nDevices:\n--------\n\t{{ hostvars.keys() | sort | join('\n\t') }}\n\nMajor Actions:\n--------------\n\t=> {{ cli_available_task_choices[user_selected_task_choice|int] }}\n\n\e[5mDo you want to continue? (YES/NO)"
+          register: user_confirmation
+      when: mode != "awx"
+      #rescue:
+    - block:
+            - name: Try to get the user choice - AWX/Tower mode
+              set_fact:
+                user_selected_task_choice: "{{ awx_available_tasks[user_selected_task] }}"
+      rescue:
+            - import_tasks: tasks/common/action/abort.yml
+              vars:
+                abort_message: "Invalid user choice"
+                abort_task_name: "Invalid User Choice"
+      when: mode == "awx"
+
+
+    - block:
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for all hosts as requested by user."
+            abort_task_name: "Requested by User"
+          run_once: yes
+          when: (user_confirmation.user_input != 'YES') and (user_confirmation.user_input != 'Yes') and (user_confirmation.user_input != 'yes')
+
+      when: user_confirmation is defined and 'user_input' in user_confirmation
+
+    - import_tasks: tasks/common/set/fact/start_date_and_time.yml
+    - import_tasks: tasks/common/set/fact/logging_details.yml
+
+  # Tasks to perform
+  tasks:
+
+    - block:
+          - include_tasks: "{{ available_individual_action_includes[user_selected_task_choice|int] }}"
+            vars:
+              task_name: "Standalone Task"
+      rescue:
+          # Alert user to manually delete the ISIS overload incase of failure.
+          - import_tasks: tasks/common/display/message.yml
+            vars:
+              message_to_display: "For host {{ inventory_hostname }} there was an issue in {{ cli_available_task_choices[user_selected_task_choice|int]  }}."
+              message_task_name: "Message for issue in enabling GRES and NSR"
+      vars:
+            provider: "{{provider_details}}"
+
+
+#    - fail:
+    # Enable GRES and NSR
+#    - block:
+#          - import_tasks: tasks/juniper/actions/enable_GRES_and_NSR.yml
+#            vars:
+#              task_name: "Standalone Task"
+#      rescue:
+          # Alert user to manually delete the ISIS overload incase of failure.
+#          - import_tasks: tasks/common/display/message.yml
+#            vars:
+#              message_to_display: "For host {{ inventory_hostname }} there was an issue in enabling GRES and NSR."
+#              message_task_name: "Message for issue in enabling GRES and NSR"
+#      vars:
+#            provider: "{{provider_details}}"
+##      when: hostvars.localhost.user_selected_task_choice == 1 
+#      when: user_selected_task_choice|int == 1
+#
+#    # Disable GRES and NSR
+#    - block:
+#        - import_tasks: tasks/juniper/actions/disable_GRES_and_NSR.yml
+#          vars:
+#            task_name: "Standalone Task"
+#      rescue:
+#       # Alert user to manually delete the ISIS overload incase of failure.
+#        - import_tasks: tasks/common/display/message.yml
+#          vars:
+#            message_to_display: "For host {{ inventory_hostname }} there was an issue in disabling GRES and NSR."
+#            message_task_name: "Message for issue in disabling GRES and NSR"
+#      vars:
+#          provider: "{{provider_details}}"
+#      when: user_selected_task_choice|int == 2
+#
+#    - block:
+#        - import_tasks: tasks/juniper/actions/set_isis_overload.yml
+#          vars:
+#            task_name: "Standalone Task"
+#      rescue:
+#        - import_tasks: tasks/common/action/abort.yml
+#          vars:
+#            abort_message: "Aborting the play for host {{ inventory_hostname }} as unable to set the ISIS overload."
+#            abort_task_name: "ISIS Overload not set"
+#      vars:
+#          provider: "{{provider_details}}"
+#      when: user_selected_task_choice|int == 3
+#
+#    - block:
+#        - import_tasks: tasks/juniper/actions/delete_isis_overload.yml
+#          vars:
+#            task_name: "Standalone Task"
+#      rescue:
+#        - import_tasks: tasks/common/action/abort.yml
+#          vars:
+#            abort_message: "Aborting the play for host {{ inventory_hostname }} as unable to delete the ISIS overload."
+#            abort_task_name: "ISIS Overload not deleted"
+#      vars:
+#          provider: "{{provider_details}}"
+#      when: user_selected_task_choice|int == 4
+
+
+    
+
+  #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

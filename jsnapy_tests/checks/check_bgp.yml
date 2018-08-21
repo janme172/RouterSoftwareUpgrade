@@ -1,0 +1,81 @@
+check_bgp_summary:
+  - command: show bgp summary
+  - iterate:
+      xpath: //bgp-information
+      tests:
+        - no-diff: group-count
+          err: 'The BGP group-count has changed from {{pre["group-count"]}} to {{post["group-count"]}}.'
+          info: 'The BGP group-count has not changed.'
+        - no-diff: peer-count
+          err: 'The BGP peer-count has changed from {{pre["peer-count"]}} to {{post["peer-count"]}}.'
+          info: 'The BGP peer-count has not changed.'
+        - no-diff: down-peer-count
+          err: 'The BGP down-peer-count has changed from {{pre["down-peer-count"]}} to {{post["down-peer-count"]}}.'
+          info: 'The BGP down-peer-count has not changed.'
+  - iterate:
+      id: peer-address, peer-as
+      xpath: //bgp-information/bgp-peer
+      tests:
+        - no-diff: flap-count
+          err: 'The BGP flap-count for peer-address {{id_0}} (ASN {{id_1}}) has changed from {{pre["flap-count"]}} to {{post["flap-count"]}}.'
+          info: 'The BGP flap-count for peer-address {{id_0}} (ASN {{id_1}}) has not changed.'
+        - no-diff: peer-state
+          err: 'The BGP peer-state for peer-address {{id_0}} (ASN {{id_1}}) has changed from {{pre["peer-state"]}} to {{post["peer-state"]}}.'
+          info: 'The BGP peer-state for peer-address {{id_0}} (ASN {{id_1}}) has not changed.'
+        - no-diff: route-queue-count
+          err: 'The BGP route-queue-count for peer-address {{id_0}} (ASN {{id_1}}) has changed from {{pre["route-queue-count"]}} to {{post["route-queue-count"]}}.'
+          info: 'The BGP route-queue-count for peer-address {{id_0}} (ASN {{id_1}}) has not changed.'
+        - list-not-less: peer-address, peer-as
+          err: 'The BGP peer-address {{id_0}} (ASN {{id_1}}) is missing now.'
+          info: 'The BGP peer-address {{id_0}} (ASN {{id_1}}) is present.'
+        - list-not-more: peer-address, peer-as
+          err: 'The BGP peer-address {{id_0}} (ASN {{id_1}}) was not configured before.'
+          info: 'The BGP peer-address {{id_0}} (ASN {{id_1}}) was configured before.'
+  - iterate:
+      xpath: //bgp-information/bgp-peer/bgp-rib
+      id: name, ../peer-address, ../peer-as
+      tests:
+        - list-not-less: name
+          err: 'The bgp-rib {{id_0}} for the bgp-peer {{id_1}} (ASN {{id_2}}) is missing now.'
+          info: 'The bgp-rib {{id_0}} for the bgp-peer {{id_1}} (ASN {{id_2}}) is present.'
+        - list-not-more: name
+          err: 'The bgp-rib {{id_0}} for the bgp-peer {{id_1}} (ASN {{id_2}}) was not configured before.'
+          info: 'The bgp-rib {{id_0}} for the bgp-peer {{id_1}} (ASN {{id_2}}) was configured before.'
+        - delta: active-prefix-count, 20%
+          err: 'The active-prefix-count  for bgp-rib {{id_0}} on the bgp-peer {{id_1}} (ASN {{id_2}}) has changed more than 20 percent from {{pre["active-prefix-count"]}} to {{post["active-prefix-count"]}}.'
+          info: 'The active-prefix-count  for bgp-rib {{id_0}} on the bgp-peer {{id_1}} (ASN {{id_2}}) has not changed more than 20 percent'
+        - delta: received-prefix-count, 20%
+          err: 'The received-prefix-count for bgp-rib {{id_0}} on the bgp-peer {{id_1}} (ASN {{id_2}}) has changed more than 20 percent from {{pre["received-prefix-count"]}} to {{post["received-prefix-count"]}}.'
+          info: 'The received-prefix-count for bgp-rib {{id_0}} on the bgp-peer {{id_1}} (ASN {{id_2}}) has not changed more than 20 percent.'
+        - delta: accepted-prefix-count, 20%
+          err: 'The accepted-prefix-count for bgp-rib {{id_0}} on the bgp-peer {{id_1}} (ASN {{id_2}}) has changed more than 20 percent from {{pre["accepted-prefix-count"]}} to {{post["accepted-prefix-count"]}}.'
+          info: 'The accepted-prefix-count for bgp-rib {{id_0}} on the bgp-peer {{id_1}} (ASN {{id_2}}) has not changed more than 20 percent'
+        - delta: suppressed-prefix-count, 20%
+          err: 'The suppressed-prefix-count for bgp-rib {{id_0}} on the bgp-peer {{id_1}} (ASN {{id_2}}) has changed more than 20 percent from {{pre["suppressed-prefix-count"]}} to {{post["suppressed-prefix-count"]}}.'
+          info: 'The suppressed-prefix-count for bgp-rib {{id_0}} on the bgp-peer {{id_1}} (ASN {{id_2}}) has not changed more than 20 percent.'
+  - iterate:
+      xpath: //bgp-information/bgp-rib
+      id: name
+      tests:
+        - list-not-less: name
+          err: 'The bgp-rib {{id_0}} is missing now.'
+          info: 'The bgp-rib {{id_0}} is present.'
+        - list-not-more: name
+          err: 'The bgp-rib {{id_0}} was not configured before.'
+          info: 'The bgp-rib {{id_0}} was configured before.'
+        - delta: active-prefix-count, 20%
+          err: 'The active-prefix-count  for bgp-rib {{id_0}} has changed more than 20 percent from {{pre["active-prefix-count"]}} to {{post["active-prefix-count"]}}.'
+          info: 'The active-prefix-count  for bgp-rib {{id_0}} has not changed more than 20 percent'
+        - delta: received-prefix-count, 20%
+          err: 'The received-prefix-count for bgp-rib {{id_0}} has changed more than 20 percent from {{pre["received-prefix-count"]}} to {{post["received-prefix-count"]}}.'
+          info: 'The received-prefix-count for bgp-rib {{id_0}} has not changed more than 20 percent.'
+        - delta: accepted-prefix-count, 20%
+          err: 'The accepted-prefix-count for bgp-rib {{id_0}} has changed more than 20 percent from {{pre["accepted-prefix-count"]}} to {{post["accepted-prefix-count"]}}.'
+          info: 'The accepted-prefix-count for bgp-rib {{id_0}} has not changed more than 20 percent'
+        - delta: suppressed-prefix-count, 20%
+          err: 'The suppressed-prefix-count for bgp-rib {{id_0}} has changed more than 20 percent from {{pre["suppressed-prefix-count"]}} to {{post["suppressed-prefix-count"]}}.'
+          info: 'The suppressed-prefix-count for bgp-rib {{id_0}} has not changed more than 20 percent.'
+
+# Include the tests to run
+tests_include:
+- check_bgp_summary

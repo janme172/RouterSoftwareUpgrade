@@ -1,0 +1,22 @@
+check_ldp_neighbor:
+  - command: show ldp neighbor
+  - iterate:
+      id: ldp-neighbor-address
+      xpath: //ldp-neighbor-information/ldp-neighbor
+      tests:
+        - no-diff: interface-name
+          err: 'The interface-name for ldp-neighbor-address {{id_0}} has changed from {{pre["interface-name"]}} to {{post["interface-name"]}}.'
+          info:  'The interface-name for ldp-neighbor-address {{id_0}} has not changed.'
+        - no-diff: ldp-label-space-id
+          err: 'The ldp-label-space-id for ldp-neighbor-address {{id_0}} has changed from {{pre["ldp-label-space-id"]}} to {{post["ldp-label-space-id"]}}.'
+          info:  'The ldp-label-space-id for ldp-neighbor-address {{id_0}} has not changed.'
+        - list-not-less: ldp-neighbor-address
+          err: 'The ldp-neighbor-address {{id_0}} is missing now.'
+          info: 'The ldp-neighbor-address {{id_0}} is present.'
+        - list-not-more: interface-name
+          err: 'The ldp-neighbor-address {{id_0}} was not configured before.'
+          info: 'The ldp-neighbor-address {{id_0}} was configured before.'
+
+# Include tests to run
+tests_include:
+- check_ldp_neighbor

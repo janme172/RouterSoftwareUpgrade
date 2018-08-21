@@ -1,0 +1,1039 @@
+2018-05-28 09:49:58,249 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 09:49:58,418 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 09:49:58,419 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 09:49:59,422 - ncclient.transport.session - INFO - initialized: session-id=11882 | server_capabilities=<dictionary-keyiterator object at 0x7f7484d30838>
+2018-05-28 09:49:59,500 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 09:49:59,500 - jnpr.jsnapy.check - INFO - Tests Included: check_interface_status 
+2018-05-28 09:49:59,500 - jnpr.jsnapy.check - INFO - [34m******************* Command: show interfaces descriptions *******************
+2018-05-28 09:49:59,520 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is same in pre and post snapshot [ 15 matched ]
+2018-05-28 09:49:59,538 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is same in pre and post snapshot [ 15 matched ]
+2018-05-28 09:49:59,790 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is same in pre and post snapshot [ 243 matched ]
+2018-05-28 09:50:00,048 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is same in pre and post snapshot [ 243 matched ]
+2018-05-28 09:50:00,049 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 09:50:00,049 - jnpr.jsnapy.check - INFO - Tests Included: check_isis_interface 
+2018-05-28 09:50:00,049 - jnpr.jsnapy.check - INFO - [34m************************ Command: show isis interface ************************
+2018-05-28 09:50:00,054 - jnpr.jsnapy.operator - INFO - [32mPASS | All "circuit-type" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:50:00,058 - jnpr.jsnapy.operator - INFO - [32mPASS | All "circuit-id" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:50:00,062 - jnpr.jsnapy.operator - INFO - [32mPASS | All "isis-interface-state-one" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:50:00,066 - jnpr.jsnapy.operator - INFO - [32mPASS | All "isis-interface-state-two" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:50:00,070 - jnpr.jsnapy.operator - INFO - [32mPASS | All "metric-one" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:50:00,074 - jnpr.jsnapy.operator - INFO - [32mPASS | All "metric-two" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:50:00,077 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in pre snapshot is present in post snapshot [ 3 matched ]
+2018-05-28 09:50:00,081 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 3 matched ]
+2018-05-28 09:50:00,081 - jnpr.jsnapy.check - INFO - Tests Included: check_isis_adjacency 
+2018-05-28 09:50:00,082 - jnpr.jsnapy.check - INFO - [34m************************ Command: show isis adjacency ************************
+2018-05-28 09:50:00,087 - jnpr.jsnapy.operator - INFO - [32mPASS | All "system-name" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 09:50:00,090 - jnpr.jsnapy.operator - INFO - [32mPASS | All "level" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 09:50:00,093 - jnpr.jsnapy.operator - INFO - [32mPASS | All "adjacency-state" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 09:50:00,095 - jnpr.jsnapy.operator - INFO - The ISIS holdtime for interface-name ['ae1.0'] has changed from ['22'] to ['19'].
+2018-05-28 09:50:00,097 - jnpr.jsnapy.operator - INFO - The ISIS holdtime for interface-name ['xe-2/0/3.0'] has changed from ['26'] to ['23'].
+2018-05-28 09:50:00,097 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "holdtime" is not same in pre and post snapshot [ 0 matched / 2 failed ]
+2018-05-28 09:50:00,100 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in pre snapshot is present in post snapshot [ 2 matched ]
+2018-05-28 09:50:00,103 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 2 matched ]
+2018-05-28 09:50:00,103 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 09:50:00,103 - jnpr.jsnapy.check - INFO - Tests Included: check_bgp_summary 
+2018-05-28 09:50:00,103 - jnpr.jsnapy.check - INFO - [34m************************* Command: show bgp summary *************************
+2018-05-28 09:50:00,131 - jnpr.jsnapy.operator - INFO - [32mPASS | All "flap-count" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 09:50:00,146 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-state" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 09:50:00,160 - jnpr.jsnapy.operator - INFO - [32mPASS | All "route-queue-count" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 09:50:00,174 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-address" in pre snapshot is present in post snapshot [ 8 matched ]
+2018-05-28 09:50:00,189 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-address" in post snapshot is present in pre snapshot [ 8 matched ]
+2018-05-28 09:50:00,651 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in pre snapshot is present in post snapshot [ 339 matched ]
+2018-05-28 09:50:01,113 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in post snapshot is present in pre snapshot [ 339 matched ]
+2018-05-28 09:50:01,583 - jnpr.jsnapy.operator - INFO - [32mPASS | All "active-prefix-count" is with in delta difference of 20% [ 339 matched ]
+2018-05-28 09:50:02,061 - jnpr.jsnapy.operator - INFO - [32mPASS | All "received-prefix-count" is with in delta difference of 20% [ 339 matched ]
+2018-05-28 09:50:02,534 - jnpr.jsnapy.operator - INFO - [32mPASS | All "accepted-prefix-count" is with in delta difference of 20% [ 339 matched ]
+2018-05-28 09:50:03,008 - jnpr.jsnapy.operator - INFO - [32mPASS | All "suppressed-prefix-count" is with in delta difference of 20% [ 339 matched ]
+2018-05-28 09:50:03,023 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in pre snapshot is present in post snapshot [ 10 matched ]
+2018-05-28 09:50:03,038 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in post snapshot is present in pre snapshot [ 10 matched ]
+2018-05-28 09:50:03,052 - jnpr.jsnapy.operator - INFO - [32mPASS | All "active-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:50:03,067 - jnpr.jsnapy.operator - INFO - [32mPASS | All "received-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:50:03,082 - jnpr.jsnapy.operator - INFO - [32mPASS | All "accepted-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:50:03,097 - jnpr.jsnapy.operator - INFO - [32mPASS | All "suppressed-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:50:03,099 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 09:50:03,099 - jnpr.jsnapy.check - INFO - Tests Included: check_ldp_neighbor 
+2018-05-28 09:50:03,099 - jnpr.jsnapy.check - INFO - [34m************************* Command: show ldp neighbor *************************
+2018-05-28 09:50:03,109 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 09:50:03,118 - jnpr.jsnapy.operator - INFO - [32mPASS | All "ldp-label-space-id" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 09:50:03,127 - jnpr.jsnapy.operator - INFO - [32mPASS | All "ldp-neighbor-address" in pre snapshot is present in post snapshot [ 8 matched ]
+2018-05-28 09:50:03,136 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 8 matched ]
+2018-05-28 09:50:03,136 - jnpr.jsnapy.operator - INFO - [34m------------------------------- Final Result!! -------------------------------
+2018-05-28 09:50:03,136 - jnpr.jsnapy.operator - INFO - [31mcheck_isis_adjacency : Failed
+2018-05-28 09:50:03,136 - jnpr.jsnapy.operator - INFO - [32mcheck_bgp_summary : Passed
+2018-05-28 09:50:03,136 - jnpr.jsnapy.operator - INFO - [32mcheck_interface_status : Passed
+2018-05-28 09:50:03,137 - jnpr.jsnapy.operator - INFO - [32mcheck_isis_interface : Passed
+2018-05-28 09:50:03,137 - jnpr.jsnapy.operator - INFO - [32mcheck_ldp_neighbor : Passed
+2018-05-28 09:50:03,137 - jnpr.jsnapy.operator - INFO - [32mTotal No of tests passed: 38
+2018-05-28 09:50:03,137 - jnpr.jsnapy.operator - INFO - [31mTotal No of tests failed: 1 
+2018-05-28 09:50:03,137 - jnpr.jsnapy.operator - INFO - [31m[1mOverall Tests failed!!! 
+2018-05-28 09:57:33,018 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 09:57:33,887 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 09:57:33,887 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 09:57:34,869 - ncclient.transport.session - INFO - initialized: session-id=11993 | server_capabilities=<dictionary-keyiterator object at 0x7f7d9d670838>
+2018-05-28 09:57:34,943 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 09:57:34,943 - jnpr.jsnapy.check - INFO - Tests Included: check_interface_status 
+2018-05-28 09:57:34,943 - jnpr.jsnapy.check - INFO - [34m******************* Command: show interfaces descriptions *******************
+2018-05-28 09:57:34,962 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is same in pre and post snapshot [ 15 matched ]
+2018-05-28 09:57:34,981 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is same in pre and post snapshot [ 15 matched ]
+2018-05-28 09:57:35,232 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is same in pre and post snapshot [ 243 matched ]
+2018-05-28 09:57:35,490 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is same in pre and post snapshot [ 243 matched ]
+2018-05-28 09:57:35,491 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 09:57:35,492 - jnpr.jsnapy.check - INFO - Tests Included: check_isis_interface 
+2018-05-28 09:57:35,492 - jnpr.jsnapy.check - INFO - [34m************************ Command: show isis interface ************************
+2018-05-28 09:57:35,496 - jnpr.jsnapy.operator - INFO - [32mPASS | All "circuit-type" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:57:35,500 - jnpr.jsnapy.operator - INFO - [32mPASS | All "circuit-id" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:57:35,504 - jnpr.jsnapy.operator - INFO - [32mPASS | All "isis-interface-state-one" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:57:35,508 - jnpr.jsnapy.operator - INFO - [32mPASS | All "isis-interface-state-two" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:57:35,512 - jnpr.jsnapy.operator - INFO - [32mPASS | All "metric-one" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:57:35,516 - jnpr.jsnapy.operator - INFO - [32mPASS | All "metric-two" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:57:35,520 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in pre snapshot is present in post snapshot [ 3 matched ]
+2018-05-28 09:57:35,523 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 3 matched ]
+2018-05-28 09:57:35,524 - jnpr.jsnapy.check - INFO - Tests Included: check_isis_adjacency 
+2018-05-28 09:57:35,524 - jnpr.jsnapy.check - INFO - [34m************************ Command: show isis adjacency ************************
+2018-05-28 09:57:35,529 - jnpr.jsnapy.operator - INFO - [32mPASS | All "system-name" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 09:57:35,532 - jnpr.jsnapy.operator - INFO - [32mPASS | All "level" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 09:57:35,535 - jnpr.jsnapy.operator - INFO - [32mPASS | All "adjacency-state" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 09:57:35,537 - jnpr.jsnapy.operator - INFO - The ISIS holdtime for interface-name ['ae1.0'] has changed from ['26'] to ['23'].
+2018-05-28 09:57:35,539 - jnpr.jsnapy.operator - INFO - The ISIS holdtime for interface-name ['xe-2/0/3.0'] has changed from ['23'] to ['19'].
+2018-05-28 09:57:35,539 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "holdtime" is not same in pre and post snapshot [ 0 matched / 2 failed ]
+2018-05-28 09:57:35,542 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in pre snapshot is present in post snapshot [ 2 matched ]
+2018-05-28 09:57:35,545 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 2 matched ]
+2018-05-28 09:57:35,545 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 09:57:35,545 - jnpr.jsnapy.check - INFO - Tests Included: check_bgp_summary 
+2018-05-28 09:57:35,545 - jnpr.jsnapy.check - INFO - [34m************************* Command: show bgp summary *************************
+2018-05-28 09:57:35,573 - jnpr.jsnapy.operator - INFO - [32mPASS | All "flap-count" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 09:57:35,587 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-state" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 09:57:35,601 - jnpr.jsnapy.operator - INFO - [32mPASS | All "route-queue-count" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 09:57:35,615 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-address" in pre snapshot is present in post snapshot [ 8 matched ]
+2018-05-28 09:57:35,629 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-address" in post snapshot is present in pre snapshot [ 8 matched ]
+2018-05-28 09:57:36,096 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in pre snapshot is present in post snapshot [ 339 matched ]
+2018-05-28 09:57:36,566 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in post snapshot is present in pre snapshot [ 339 matched ]
+2018-05-28 09:57:37,047 - jnpr.jsnapy.operator - INFO - [32mPASS | All "active-prefix-count" is with in delta difference of 20% [ 339 matched ]
+2018-05-28 09:57:37,529 - jnpr.jsnapy.operator - INFO - [32mPASS | All "received-prefix-count" is with in delta difference of 20% [ 339 matched ]
+2018-05-28 09:57:38,011 - jnpr.jsnapy.operator - INFO - [32mPASS | All "accepted-prefix-count" is with in delta difference of 20% [ 339 matched ]
+2018-05-28 09:57:38,494 - jnpr.jsnapy.operator - INFO - [32mPASS | All "suppressed-prefix-count" is with in delta difference of 20% [ 339 matched ]
+2018-05-28 09:57:38,509 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in pre snapshot is present in post snapshot [ 10 matched ]
+2018-05-28 09:57:38,524 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in post snapshot is present in pre snapshot [ 10 matched ]
+2018-05-28 09:57:38,539 - jnpr.jsnapy.operator - INFO - [32mPASS | All "active-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:57:38,554 - jnpr.jsnapy.operator - INFO - [32mPASS | All "received-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:57:38,569 - jnpr.jsnapy.operator - INFO - [32mPASS | All "accepted-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:57:38,585 - jnpr.jsnapy.operator - INFO - [32mPASS | All "suppressed-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:57:38,586 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 09:57:38,586 - jnpr.jsnapy.check - INFO - Tests Included: check_ldp_neighbor 
+2018-05-28 09:57:38,586 - jnpr.jsnapy.check - INFO - [34m************************* Command: show ldp neighbor *************************
+2018-05-28 09:57:38,596 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 09:57:38,605 - jnpr.jsnapy.operator - INFO - [32mPASS | All "ldp-label-space-id" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 09:57:38,614 - jnpr.jsnapy.operator - INFO - [32mPASS | All "ldp-neighbor-address" in pre snapshot is present in post snapshot [ 8 matched ]
+2018-05-28 09:57:38,623 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 8 matched ]
+2018-05-28 09:57:38,623 - jnpr.jsnapy.operator - INFO - [34m------------------------------- Final Result!! -------------------------------
+2018-05-28 09:57:38,624 - jnpr.jsnapy.operator - INFO - [31mcheck_isis_adjacency : Failed
+2018-05-28 09:57:38,624 - jnpr.jsnapy.operator - INFO - [32mcheck_bgp_summary : Passed
+2018-05-28 09:57:38,624 - jnpr.jsnapy.operator - INFO - [32mcheck_interface_status : Passed
+2018-05-28 09:57:38,624 - jnpr.jsnapy.operator - INFO - [32mcheck_isis_interface : Passed
+2018-05-28 09:57:38,624 - jnpr.jsnapy.operator - INFO - [32mcheck_ldp_neighbor : Passed
+2018-05-28 09:57:38,624 - jnpr.jsnapy.operator - INFO - [32mTotal No of tests passed: 38
+2018-05-28 09:57:38,625 - jnpr.jsnapy.operator - INFO - [31mTotal No of tests failed: 1 
+2018-05-28 09:57:38,625 - jnpr.jsnapy.operator - INFO - [31m[1mOverall Tests failed!!! 
+2018-05-28 14:43:50,030 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 14:43:50,201 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 14:43:50,201 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 14:43:51,246 - ncclient.transport.session - INFO - initialized: session-id=8840 | server_capabilities=<dictionary-keyiterator object at 0x7f742d285838>
+2018-05-28 14:43:51,326 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 14:43:51,326 - jnpr.jsnapy.check - INFO - Tests Included: check_interface_status 
+2018-05-28 14:43:51,326 - jnpr.jsnapy.check - INFO - [34m******************* Command: show interfaces descriptions *******************
+2018-05-28 14:43:51,346 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is same in pre and post snapshot [ 15 matched ]
+2018-05-28 14:43:51,365 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is same in pre and post snapshot [ 15 matched ]
+2018-05-28 14:43:51,619 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is same in pre and post snapshot [ 243 matched ]
+2018-05-28 14:43:51,882 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is same in pre and post snapshot [ 243 matched ]
+2018-05-28 14:43:51,883 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 14:43:51,883 - jnpr.jsnapy.check - INFO - Tests Included: check_isis_interface 
+2018-05-28 14:43:51,883 - jnpr.jsnapy.check - INFO - [34m************************ Command: show isis interface ************************
+2018-05-28 14:43:51,888 - jnpr.jsnapy.operator - INFO - [32mPASS | All "circuit-type" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 14:43:51,892 - jnpr.jsnapy.operator - INFO - [32mPASS | All "circuit-id" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 14:43:51,896 - jnpr.jsnapy.operator - INFO - [32mPASS | All "isis-interface-state-one" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 14:43:51,900 - jnpr.jsnapy.operator - INFO - [32mPASS | All "isis-interface-state-two" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 14:43:51,904 - jnpr.jsnapy.operator - INFO - [32mPASS | All "metric-one" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 14:43:51,908 - jnpr.jsnapy.operator - INFO - [32mPASS | All "metric-two" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 14:43:51,912 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in pre snapshot is present in post snapshot [ 3 matched ]
+2018-05-28 14:43:51,915 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 3 matched ]
+2018-05-28 14:43:51,916 - jnpr.jsnapy.check - INFO - Tests Included: check_isis_adjacency 
+2018-05-28 14:43:51,916 - jnpr.jsnapy.check - INFO - [34m************************ Command: show isis adjacency ************************
+2018-05-28 14:43:51,921 - jnpr.jsnapy.operator - INFO - [32mPASS | All "system-name" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 14:43:51,923 - jnpr.jsnapy.operator - INFO - [32mPASS | All "level" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 14:43:51,926 - jnpr.jsnapy.operator - INFO - [32mPASS | All "adjacency-state" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 14:43:51,929 - jnpr.jsnapy.operator - INFO - The ISIS holdtime for interface-name ['ae1.0'] has changed from ['20'] to ['26'].
+2018-05-28 14:43:51,930 - jnpr.jsnapy.operator - INFO - The ISIS holdtime for interface-name ['xe-2/0/3.0'] has changed from ['26'] to ['20'].
+2018-05-28 14:43:51,931 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "holdtime" is not same in pre and post snapshot [ 0 matched / 2 failed ]
+2018-05-28 14:43:51,933 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in pre snapshot is present in post snapshot [ 2 matched ]
+2018-05-28 14:43:51,936 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 2 matched ]
+2018-05-28 14:43:51,936 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 14:43:51,937 - jnpr.jsnapy.check - INFO - Tests Included: check_bgp_summary 
+2018-05-28 14:43:51,937 - jnpr.jsnapy.check - INFO - [34m************************* Command: show bgp summary *************************
+2018-05-28 14:43:51,964 - jnpr.jsnapy.operator - INFO - [32mPASS | All "flap-count" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 14:43:51,978 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-state" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 14:43:51,993 - jnpr.jsnapy.operator - INFO - [32mPASS | All "route-queue-count" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 14:43:52,007 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-address" in pre snapshot is present in post snapshot [ 8 matched ]
+2018-05-28 14:43:52,021 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-address" in post snapshot is present in pre snapshot [ 8 matched ]
+2018-05-28 14:43:52,491 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in pre snapshot is present in post snapshot [ 339 matched ]
+2018-05-28 14:43:52,963 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in post snapshot is present in pre snapshot [ 339 matched ]
+2018-05-28 14:43:53,196 - jnpr.jsnapy.operator - INFO - The active-prefix-count  for bgp-rib ['VRF16194.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 14:43:53,214 - jnpr.jsnapy.operator - INFO - The active-prefix-count  for bgp-rib ['bgp.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 14:43:53,368 - jnpr.jsnapy.operator - INFO - The active-prefix-count  for bgp-rib ['VRF16195.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 14:43:53,450 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "active-prefix-count" is not with in delta difference of 20% [ 336 matched / 3 failed ]
+2018-05-28 14:43:53,475 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99182.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,489 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99149.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,495 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99162.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,498 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99192.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,511 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99165.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,513 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99112.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,518 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99172.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,529 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99151.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,531 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99115.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,534 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99167.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,536 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99175.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,548 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99139.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,557 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99141.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,560 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99148.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,567 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99155.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,583 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99186.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,588 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99100.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,592 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF16195.mvpn.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 14:43:53,597 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99142.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,600 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['bgp.mvpn.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 14:43:53,604 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99191.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 4.0 to 3.0.
+2018-05-28 14:43:53,612 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99196.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,616 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99169.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,619 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99107.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,623 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99135.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,625 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99174.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,627 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99159.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,632 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99121.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 7.0 to 5.0.
+2018-05-28 14:43:53,642 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99181.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,648 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99119.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,653 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99194.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,655 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99102.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,670 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99143.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,672 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF16194.mvpn.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 14:43:53,674 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99133.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,677 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99173.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,682 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99104.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,688 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99197.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,692 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99184.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,695 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99147.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,700 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99134.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,709 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99145.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,711 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99101.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,713 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF16194.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 14:43:53,719 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99118.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,725 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99117.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,732 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99113.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,734 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['bgp.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 14:43:53,736 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99153.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,744 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99105.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,747 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99157.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,751 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99183.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,762 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99193.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,769 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99154.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,771 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99144.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,792 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99168.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,794 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99114.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,807 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99158.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,810 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99123.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,818 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99124.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,822 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99152.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,824 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99146.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,844 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99116.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,850 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99138.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,856 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99178.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,859 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99171.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,861 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99109.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,874 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99188.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,884 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99195.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,893 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99176.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,898 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99136.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,907 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF16195.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 14:43:53,909 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99108.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,913 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99166.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,916 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99106.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,922 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99156.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,924 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99137.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,926 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99187.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,932 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99131.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,939 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99163.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,944 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99161.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,948 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99179.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,956 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99189.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,973 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99103.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,984 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99111.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,986 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99164.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,990 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99132.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:53,994 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99177.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,000 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99185.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,002 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "received-prefix-count" is not with in delta difference of 20% [ 250 matched / 89 failed ]
+2018-05-28 14:43:54,027 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99182.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,041 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99149.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,048 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99162.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,051 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99192.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,064 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99165.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,066 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99112.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,071 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99172.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,081 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99151.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,083 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99115.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,087 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99167.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,089 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99175.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,101 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99139.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,109 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99141.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,113 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99148.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,119 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99155.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,136 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99186.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,141 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99100.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,145 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF16195.mvpn.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 14:43:54,150 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99142.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,153 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['bgp.mvpn.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 14:43:54,157 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99191.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 4.0 to 3.0.
+2018-05-28 14:43:54,165 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99196.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,169 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99169.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,172 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99107.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,176 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99135.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,178 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99174.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,180 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99159.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,185 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99121.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 7.0 to 5.0.
+2018-05-28 14:43:54,195 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99181.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,201 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99119.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,206 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99194.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,208 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99102.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,223 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99143.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,225 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF16194.mvpn.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 14:43:54,227 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99133.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,231 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99173.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,236 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99104.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,242 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99197.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,245 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99184.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,249 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99147.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,254 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99134.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,263 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99145.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,265 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99101.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,267 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF16194.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 14:43:54,273 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99118.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,278 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99117.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,285 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99113.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,288 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['bgp.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 14:43:54,290 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99153.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,297 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99105.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,301 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99157.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,304 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99183.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,316 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99193.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,322 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99154.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,324 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99144.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,345 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99168.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,347 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99114.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,360 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99158.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,364 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99123.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,371 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99124.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,375 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99152.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,377 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99146.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,396 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99116.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,403 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99138.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,409 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99178.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,412 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99171.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,414 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99109.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,426 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99188.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,436 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99195.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,445 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99176.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,450 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99136.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,459 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF16195.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 14:43:54,461 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99108.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,466 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99166.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,468 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99106.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,474 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99156.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,476 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99137.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,478 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99187.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,484 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99131.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,490 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99163.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,495 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99161.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,500 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99179.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,507 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99189.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,525 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99103.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,535 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99111.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,537 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99164.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,542 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99132.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,546 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99177.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,552 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99185.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 14:43:54,554 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "accepted-prefix-count" is not with in delta difference of 20% [ 250 matched / 89 failed ]
+2018-05-28 14:43:55,038 - jnpr.jsnapy.operator - INFO - [32mPASS | All "suppressed-prefix-count" is with in delta difference of 20% [ 339 matched ]
+2018-05-28 14:43:55,054 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in pre snapshot is present in post snapshot [ 10 matched ]
+2018-05-28 14:43:55,068 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in post snapshot is present in pre snapshot [ 10 matched ]
+2018-05-28 14:43:55,080 - jnpr.jsnapy.operator - INFO - The active-prefix-count  for bgp-rib ['bgp.mvpn-inet6.0'] has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 14:43:55,084 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "active-prefix-count" is not with in delta difference of 20% [ 9 matched / 1 failed ]
+2018-05-28 14:43:55,096 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['bgp.mvpn-inet6.0'] has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 14:43:55,101 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['bgp.mvpn.0'] has changed more than 20 percent from 17.0 to 13.0.
+2018-05-28 14:43:55,101 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "received-prefix-count" is not with in delta difference of 20% [ 8 matched / 2 failed ]
+2018-05-28 14:43:55,112 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['bgp.mvpn-inet6.0'] has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 14:43:55,117 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['bgp.mvpn.0'] has changed more than 20 percent from 17.0 to 13.0.
+2018-05-28 14:43:55,118 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "accepted-prefix-count" is not with in delta difference of 20% [ 8 matched / 2 failed ]
+2018-05-28 14:43:55,133 - jnpr.jsnapy.operator - INFO - [32mPASS | All "suppressed-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 14:43:55,135 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 14:43:55,135 - jnpr.jsnapy.check - INFO - Tests Included: check_ldp_neighbor 
+2018-05-28 14:43:55,135 - jnpr.jsnapy.check - INFO - [34m************************* Command: show ldp neighbor *************************
+2018-05-28 14:43:55,145 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 14:43:55,154 - jnpr.jsnapy.operator - INFO - [32mPASS | All "ldp-label-space-id" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 14:43:55,163 - jnpr.jsnapy.operator - INFO - [32mPASS | All "ldp-neighbor-address" in pre snapshot is present in post snapshot [ 8 matched ]
+2018-05-28 14:43:55,172 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 8 matched ]
+2018-05-28 14:43:55,172 - jnpr.jsnapy.operator - INFO - [34m------------------------------- Final Result!! -------------------------------
+2018-05-28 14:43:55,172 - jnpr.jsnapy.operator - INFO - [31mcheck_isis_adjacency : Failed
+2018-05-28 14:43:55,172 - jnpr.jsnapy.operator - INFO - [31mcheck_bgp_summary : Failed
+2018-05-28 14:43:55,173 - jnpr.jsnapy.operator - INFO - [32mcheck_interface_status : Passed
+2018-05-28 14:43:55,173 - jnpr.jsnapy.operator - INFO - [32mcheck_isis_interface : Passed
+2018-05-28 14:43:55,173 - jnpr.jsnapy.operator - INFO - [32mcheck_ldp_neighbor : Passed
+2018-05-28 14:43:55,173 - jnpr.jsnapy.operator - INFO - [32mTotal No of tests passed: 32
+2018-05-28 14:43:55,173 - jnpr.jsnapy.operator - INFO - [31mTotal No of tests failed: 7 
+2018-05-28 14:43:55,173 - jnpr.jsnapy.operator - INFO - [31m[1mOverall Tests failed!!! 
+2018-05-28 17:34:08,383 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 17:34:08,554 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 17:34:08,554 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 17:34:09,549 - ncclient.transport.session - INFO - initialized: session-id=15593 | server_capabilities=<dictionary-keyiterator object at 0x7f64f5860838>
+2018-05-28 17:34:09,627 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 17:34:09,628 - jnpr.jsnapy.check - INFO - Tests Included: check_interface_status 
+2018-05-28 17:34:09,628 - jnpr.jsnapy.check - INFO - [34m******************* Command: show interfaces descriptions *******************
+2018-05-28 17:34:09,648 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is same in pre and post snapshot [ 15 matched ]
+2018-05-28 17:34:09,666 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is same in pre and post snapshot [ 15 matched ]
+2018-05-28 17:34:09,915 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is same in pre and post snapshot [ 243 matched ]
+2018-05-28 17:34:10,173 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is same in pre and post snapshot [ 243 matched ]
+2018-05-28 17:34:10,174 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 17:34:10,174 - jnpr.jsnapy.check - INFO - Tests Included: check_isis_interface 
+2018-05-28 17:34:10,174 - jnpr.jsnapy.check - INFO - [34m************************ Command: show isis interface ************************
+2018-05-28 17:34:10,179 - jnpr.jsnapy.operator - INFO - [32mPASS | All "circuit-type" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 17:34:10,183 - jnpr.jsnapy.operator - INFO - [32mPASS | All "circuit-id" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 17:34:10,186 - jnpr.jsnapy.operator - INFO - [32mPASS | All "isis-interface-state-one" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 17:34:10,190 - jnpr.jsnapy.operator - INFO - [32mPASS | All "isis-interface-state-two" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 17:34:10,194 - jnpr.jsnapy.operator - INFO - [32mPASS | All "metric-one" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 17:34:10,198 - jnpr.jsnapy.operator - INFO - [32mPASS | All "metric-two" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 17:34:10,202 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in pre snapshot is present in post snapshot [ 3 matched ]
+2018-05-28 17:34:10,205 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 3 matched ]
+2018-05-28 17:34:10,206 - jnpr.jsnapy.check - INFO - Tests Included: check_isis_adjacency 
+2018-05-28 17:34:10,206 - jnpr.jsnapy.check - INFO - [34m************************ Command: show isis adjacency ************************
+2018-05-28 17:34:10,210 - jnpr.jsnapy.operator - INFO - [32mPASS | All "system-name" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 17:34:10,213 - jnpr.jsnapy.operator - INFO - [32mPASS | All "level" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 17:34:10,216 - jnpr.jsnapy.operator - INFO - [32mPASS | All "adjacency-state" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 17:34:10,218 - jnpr.jsnapy.operator - INFO - The ISIS holdtime for interface-name ['ae1.0'] has changed from ['24'] to ['22'].
+2018-05-28 17:34:10,219 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "holdtime" is not same in pre and post snapshot [ 1 matched / 1 failed ]
+2018-05-28 17:34:10,222 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in pre snapshot is present in post snapshot [ 2 matched ]
+2018-05-28 17:34:10,225 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 2 matched ]
+2018-05-28 17:34:10,225 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 17:34:10,225 - jnpr.jsnapy.check - INFO - Tests Included: check_bgp_summary 
+2018-05-28 17:34:10,225 - jnpr.jsnapy.check - INFO - [34m************************* Command: show bgp summary *************************
+2018-05-28 17:34:10,252 - jnpr.jsnapy.operator - INFO - [32mPASS | All "flap-count" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 17:34:10,266 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-state" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 17:34:10,280 - jnpr.jsnapy.operator - INFO - [32mPASS | All "route-queue-count" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 17:34:10,294 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-address" in pre snapshot is present in post snapshot [ 8 matched ]
+2018-05-28 17:34:10,309 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-address" in post snapshot is present in pre snapshot [ 8 matched ]
+2018-05-28 17:34:10,774 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in pre snapshot is present in post snapshot [ 339 matched ]
+2018-05-28 17:34:11,239 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in post snapshot is present in pre snapshot [ 339 matched ]
+2018-05-28 17:34:11,466 - jnpr.jsnapy.operator - INFO - The active-prefix-count  for bgp-rib ['VRF16194.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 17:34:11,484 - jnpr.jsnapy.operator - INFO - The active-prefix-count  for bgp-rib ['bgp.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 17:34:11,636 - jnpr.jsnapy.operator - INFO - The active-prefix-count  for bgp-rib ['VRF16195.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 17:34:11,716 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "active-prefix-count" is not with in delta difference of 20% [ 336 matched / 3 failed ]
+2018-05-28 17:34:11,740 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99182.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,754 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99149.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,760 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99162.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,764 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99192.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,776 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99165.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,779 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99112.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,783 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99172.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,793 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99151.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,795 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99115.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,799 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99167.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,801 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99175.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,812 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99139.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,821 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99141.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,824 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99148.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,831 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99155.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,848 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99186.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,852 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99100.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,856 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF16195.mvpn.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 17:34:11,860 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99142.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,864 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['bgp.mvpn.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 17:34:11,867 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99191.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 4.0 to 3.0.
+2018-05-28 17:34:11,876 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99196.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,879 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99169.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,883 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99107.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,886 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99135.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,888 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99174.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,890 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99159.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,895 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99121.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 7.0 to 5.0.
+2018-05-28 17:34:11,905 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99181.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,911 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99119.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,916 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99194.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,918 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99102.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,932 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99143.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,934 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF16194.mvpn.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 17:34:11,936 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99133.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,940 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99173.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,944 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99104.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,951 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99197.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,954 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99184.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,957 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99147.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,962 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99134.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,971 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99145.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,973 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99101.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,975 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF16194.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 17:34:11,981 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99118.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,986 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99117.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,993 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99113.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:11,995 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['bgp.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 17:34:11,997 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99153.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,005 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99105.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,008 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99157.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,012 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99183.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,023 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99193.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,030 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99154.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,032 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99144.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,053 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99168.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,055 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99114.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,068 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99158.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,071 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99123.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,079 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99124.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,082 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99152.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,084 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99146.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,104 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99116.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,110 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99138.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,116 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99178.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,119 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99171.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,121 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99109.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,134 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99188.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,144 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99195.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,153 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99176.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,157 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99136.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,166 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF16195.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 17:34:12,168 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99108.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,173 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99166.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,175 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99106.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,181 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99156.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,183 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99137.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,185 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99187.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,191 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99131.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,197 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99163.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,202 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99161.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,207 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99179.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,214 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99189.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,231 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99103.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,241 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99111.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,244 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99164.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,249 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99132.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,252 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99177.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,258 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['VRF99185.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,260 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "received-prefix-count" is not with in delta difference of 20% [ 250 matched / 89 failed ]
+2018-05-28 17:34:12,284 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99182.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,298 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99149.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,304 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99162.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,307 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99192.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,320 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99165.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,322 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99112.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,327 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99172.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,337 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99151.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,339 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99115.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,342 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99167.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,345 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99175.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,356 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99139.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,365 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99141.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,368 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99148.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,374 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99155.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,391 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99186.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,396 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99100.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,399 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF16195.mvpn.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 17:34:12,404 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99142.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,408 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['bgp.mvpn.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 17:34:12,411 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99191.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 4.0 to 3.0.
+2018-05-28 17:34:12,420 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99196.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,423 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99169.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,427 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99107.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,430 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99135.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,432 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99174.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,434 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99159.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,439 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99121.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 7.0 to 5.0.
+2018-05-28 17:34:12,449 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99181.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,455 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99119.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,460 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99194.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,462 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99102.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,477 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99143.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,479 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF16194.mvpn.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 17:34:12,481 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99133.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,484 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99173.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,489 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99104.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,495 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99197.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,499 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99184.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,502 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99147.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,507 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99134.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,516 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99145.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,518 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99101.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,520 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF16194.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 17:34:12,526 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99118.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,531 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99117.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,538 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99113.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,540 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['bgp.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 17:34:12,543 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99153.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,550 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99105.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,554 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99157.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,557 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99183.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,568 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99193.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,574 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99154.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,577 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99144.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,597 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99168.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,599 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99114.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,612 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99158.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,616 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99123.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,623 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99124.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,627 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99152.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,629 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99146.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,649 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99116.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,655 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99138.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,661 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99178.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,665 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99171.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,667 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99109.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,679 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99188.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,689 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99195.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,698 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99176.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,703 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99136.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,712 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF16195.mvpn-inet6.0'] on the bgp-peer ['193.88.239.220'] (ASN ['8322']) has changed more than 20 percent from 5.0 to 3.0.
+2018-05-28 17:34:12,714 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99108.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,718 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99166.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,721 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99106.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,727 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99156.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,729 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99137.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,731 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99187.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,737 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99131.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,743 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99163.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,748 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99161.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,753 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99179.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,761 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99189.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,778 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99103.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,788 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99111.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,790 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99164.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,795 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99132.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,799 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99177.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,805 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['VRF99185.inet.0'] on the bgp-peer ['193.88.239.211'] (ASN ['8322']) has changed more than 20 percent from 3.0 to 2.0.
+2018-05-28 17:34:12,807 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "accepted-prefix-count" is not with in delta difference of 20% [ 250 matched / 89 failed ]
+2018-05-28 17:34:13,293 - jnpr.jsnapy.operator - INFO - [32mPASS | All "suppressed-prefix-count" is with in delta difference of 20% [ 339 matched ]
+2018-05-28 17:34:13,308 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in pre snapshot is present in post snapshot [ 10 matched ]
+2018-05-28 17:34:13,323 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in post snapshot is present in pre snapshot [ 10 matched ]
+2018-05-28 17:34:13,335 - jnpr.jsnapy.operator - INFO - The active-prefix-count  for bgp-rib ['bgp.mvpn-inet6.0'] has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 17:34:13,339 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "active-prefix-count" is not with in delta difference of 20% [ 9 matched / 1 failed ]
+2018-05-28 17:34:13,351 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['bgp.mvpn-inet6.0'] has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 17:34:13,356 - jnpr.jsnapy.operator - INFO - The received-prefix-count for bgp-rib ['bgp.mvpn.0'] has changed more than 20 percent from 17.0 to 13.0.
+2018-05-28 17:34:13,356 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "received-prefix-count" is not with in delta difference of 20% [ 8 matched / 2 failed ]
+2018-05-28 17:34:13,367 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['bgp.mvpn-inet6.0'] has changed more than 20 percent from 10.0 to 6.0.
+2018-05-28 17:34:13,372 - jnpr.jsnapy.operator - INFO - The accepted-prefix-count for bgp-rib ['bgp.mvpn.0'] has changed more than 20 percent from 17.0 to 13.0.
+2018-05-28 17:34:13,373 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "accepted-prefix-count" is not with in delta difference of 20% [ 8 matched / 2 failed ]
+2018-05-28 17:34:13,388 - jnpr.jsnapy.operator - INFO - [32mPASS | All "suppressed-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 17:34:13,389 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-28 17:34:13,390 - jnpr.jsnapy.check - INFO - Tests Included: check_ldp_neighbor 
+2018-05-28 17:34:13,390 - jnpr.jsnapy.check - INFO - [34m************************* Command: show ldp neighbor *************************
+2018-05-28 17:34:13,400 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 17:34:13,409 - jnpr.jsnapy.operator - INFO - [32mPASS | All "ldp-label-space-id" is same in pre and post snapshot [ 8 matched ]
+2018-05-28 17:34:13,418 - jnpr.jsnapy.operator - INFO - [32mPASS | All "ldp-neighbor-address" in pre snapshot is present in post snapshot [ 8 matched ]
+2018-05-28 17:34:13,427 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 8 matched ]
+2018-05-28 17:34:13,427 - jnpr.jsnapy.operator - INFO - [34m------------------------------- Final Result!! -------------------------------
+2018-05-28 17:34:13,428 - jnpr.jsnapy.operator - INFO - [31mcheck_isis_adjacency : Failed
+2018-05-28 17:34:13,428 - jnpr.jsnapy.operator - INFO - [31mcheck_bgp_summary : Failed
+2018-05-28 17:34:13,428 - jnpr.jsnapy.operator - INFO - [32mcheck_interface_status : Passed
+2018-05-28 17:34:13,428 - jnpr.jsnapy.operator - INFO - [32mcheck_isis_interface : Passed
+2018-05-28 17:34:13,428 - jnpr.jsnapy.operator - INFO - [32mcheck_ldp_neighbor : Passed
+2018-05-28 17:34:13,428 - jnpr.jsnapy.operator - INFO - [32mTotal No of tests passed: 32
+2018-05-28 17:34:13,428 - jnpr.jsnapy.operator - INFO - [31mTotal No of tests failed: 7 
+2018-05-28 17:34:13,429 - jnpr.jsnapy.operator - INFO - [31m[1mOverall Tests failed!!! 
+2018-05-28 18:07:42,021 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:07:42,553 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:07:42,553 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:07:43,808 - ncclient.transport.session - INFO - initialized: session-id=10708 | server_capabilities=<dictionary-keyiterator object at 0x7f04abfe6838>
+2018-05-28 18:07:43,900 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:07:44,534 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:07:44,650 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:07:44,768 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:07:45,003 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-28 18:07:45,790 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:07:45,961 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:07:45,961 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:07:46,956 - ncclient.transport.session - INFO - initialized: session-id=10714 | server_capabilities=<dictionary-keyiterator object at 0x7f3f9fc66838>
+2018-05-28 18:07:47,033 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:07:47,659 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:07:47,775 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:07:47,891 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:07:48,126 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-28 18:09:14,737 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:09:15,268 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:09:15,268 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:09:16,270 - ncclient.transport.session - INFO - initialized: session-id=10767 | server_capabilities=<dictionary-keyiterator object at 0x7fb6a2394838>
+2018-05-28 18:09:16,355 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:09:17,081 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:09:17,197 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:09:17,313 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:09:17,553 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-28 18:09:18,374 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:09:18,571 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:09:18,571 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:09:19,562 - ncclient.transport.session - INFO - initialized: session-id=10773 | server_capabilities=<dictionary-keyiterator object at 0x7fb0eb397838>
+2018-05-28 18:09:19,639 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:09:20,367 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:09:20,483 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:09:20,599 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:09:20,834 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-28 18:11:30,193 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:11:30,725 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:11:30,725 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:11:31,729 - ncclient.transport.session - INFO - initialized: session-id=10832 | server_capabilities=<dictionary-keyiterator object at 0x7f904c59e838>
+2018-05-28 18:11:31,806 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:11:32,532 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:11:32,648 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:11:32,764 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:11:32,998 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-28 18:11:33,820 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:11:33,991 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:11:33,992 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:11:34,989 - ncclient.transport.session - INFO - initialized: session-id=10838 | server_capabilities=<dictionary-keyiterator object at 0x7f1bd5e52838>
+2018-05-28 18:11:35,063 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:11:35,639 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:11:35,755 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:11:35,870 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:11:36,155 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-28 18:12:27,868 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:12:28,951 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:12:28,951 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:12:29,964 - ncclient.transport.session - INFO - initialized: session-id=10891 | server_capabilities=<dictionary-keyiterator object at 0x7f9c15a6e838>
+2018-05-28 18:12:30,037 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:12:30,663 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:12:30,778 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:12:30,894 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:12:31,128 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-28 18:12:31,898 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:12:32,070 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:12:32,071 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:12:33,062 - ncclient.transport.session - INFO - initialized: session-id=10897 | server_capabilities=<dictionary-keyiterator object at 0x7f2d15ffb838>
+2018-05-28 18:12:33,139 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:12:33,765 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:12:33,880 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:12:33,996 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:12:34,280 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-29 09:05:59,703 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-29 09:06:00,233 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-29 09:06:00,234 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-29 09:06:01,284 - ncclient.transport.session - INFO - initialized: session-id=14123 | server_capabilities=<dictionary-keyiterator object at 0x7f8dae45b838>
+2018-05-29 09:06:01,358 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-29 09:06:02,033 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-29 09:06:02,149 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-29 09:06:02,265 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-29 09:06:02,449 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-29 09:06:03,214 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-29 09:06:03,388 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-29 09:06:03,388 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-29 09:06:04,428 - ncclient.transport.session - INFO - initialized: session-id=14129 | server_capabilities=<dictionary-keyiterator object at 0x7fefdb2a6838>
+2018-05-29 09:06:04,502 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-29 09:06:05,228 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-29 09:06:05,344 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-29 09:06:05,459 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-29 09:06:05,694 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-29 09:09:34,773 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-29 09:09:35,295 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-29 09:09:35,295 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-29 09:09:36,409 - ncclient.transport.session - INFO - initialized: session-id=14182 | server_capabilities=<dictionary-keyiterator object at 0x7f9d31c40838>
+2018-05-29 09:09:36,482 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-29 09:09:37,266 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-29 09:09:37,381 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-29 09:09:37,507 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-29 09:09:37,741 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-29 09:09:38,504 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-29 09:09:38,675 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-29 09:09:38,675 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-29 09:09:39,678 - ncclient.transport.session - INFO - initialized: session-id=14188 | server_capabilities=<dictionary-keyiterator object at 0x7f6440ebf838>
+2018-05-29 09:09:39,753 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-29 09:09:40,379 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-29 09:09:40,495 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-29 09:09:40,610 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-29 09:09:40,895 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 

@@ -1,0 +1,48 @@
+---
+
+# Important Note: Please do not chnage the names of tasks. Let them remain as they are.
+
+- name: Playbook for showing the device information.
+  hosts: "{{ run_on_hosts | default('all') }}"
+  max_fail_percentage: 100
+  connection: local
+  gather_facts: no
+  # include the customized junos role
+  roles:
+    - Juniper.junos
+  vars_prompt:
+    - name: "device_user_name"
+      prompt: "\n\nTDC Username"
+      private: no
+      default: "{{lookup('env','USER')}}"
+    - name: "device_user_passwd"
+      prompt: "password"
+      private: yes
+  vars:
+    provider_details:
+      username: "{{ device_user_name }}"
+      password: "{{ device_user_passwd  }}"
+      host: "{{ inventory_hostname }}"
+  pre_tasks:
+    - import_tasks: tasks/common/set/fact/start_date_and_time.yml
+    - import_tasks: tasks/common/set/fact/logging_details.yml
+  # All Tasks
+  tasks:
+
+    #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    # BLOCK A - This block gathers the router facts/info.
+    #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    - block:
+        # Gather the router facts/info. No configuration data will be gathered.
+        - import_tasks: tasks/juniper/facts/gather_facts_without_config.yml
+      rescue:
+        # Alert user about abort of play as únable gather the facts.
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as there was issue while gathering info/fácts about the device."
+            abort_task_name: "Issue in info/fact gathering."
+      vars:
+        provider: "{{ provider_details }}"      
+    #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    - import_tasks: tasks/juniper/display/device_facts_info.yml

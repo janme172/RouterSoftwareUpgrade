@@ -1,0 +1,4 @@
+---
+- name: Set the current backup RE software version variable
+  set_fact:
+    software_version_backup_re: "{{ ansible_facts.junos.junos_info[backup_re].text }}"

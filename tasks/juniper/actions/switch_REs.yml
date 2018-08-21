@@ -1,0 +1,10 @@
+---
+- name: Attempt RE Switchover
+  juniper_junos_command:
+    command: "request chassis routing-engine master switch no-confirm"
+    timeout: 30
+    provider: "{{ provider | default({}) }}"
+  register: response_re_switchover
+  #ignore_errors: yes
+  failed_when: 
+    - ('module_stderr' in response_re_switchover) and not ('SessionCloseError' in response_re_switchover.module_stderr or 'TimeoutExpiredError' in response_re_switchover.module_stderr)

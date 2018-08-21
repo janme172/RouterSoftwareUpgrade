@@ -1,0 +1,6 @@
+---
+- name: Set Playbook Logging Details
+  set_fact:
+#    play_log_host: '62.243.147.45'
+    play_log_dir: "/var/log/ansible/{{ play_start_date }}/{{ play_start_time }}"
+  run_once: yes

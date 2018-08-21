@@ -1,0 +1,14 @@
+---
+- name: "Disable GRES and NSR - {{ task_name | default('')}}"
+  juniper_junos_config:
+    timeout: 180
+    config_mode: "private"
+    load: "set"
+    lines:
+      - "delete routing-options nonstop-routing"
+      - "delete chassis redundancy graceful-switchover"
+      - "delete system commit synchronize"
+    ignore_warning: "statement not found"
+    provider: "{{ provider | default({}) }}"
+  register: disable_gres_nsr_respponse
+#  failed_when: "'severity: warning, bad_element:' not in disable_gres_nsr_respponse.msg and disable_gres_nsr_respponse is failed"

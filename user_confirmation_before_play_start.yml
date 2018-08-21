@@ -1,0 +1,23 @@
+---
+
+# Important Note: Please do not chnage the names of tasks. Let them remain as they are.
+- name: Take Confirmation from user
+  hosts: all
+  gather_facts: no
+  vars:
+    actions_to_perform: "{{ actions }}"
+#['Take Jsanpy PRE snapshots', 'SET the ISIS overload', 'Attempt RE Switchover', 'Delete ISIS overload', 'Take Jsnapy POST snaphots', 'Compare Jsnapy PRE and POST snapshots']
+  tasks:
+    - name: User Confirmation
+      pause:
+        prompt: "\e[32m\e[1m\n-------------------\nPlaybook Details: \n-------------------\n\nDevices:\n--------\n\t{{ hostvars.keys() | sort | join('\n\t') }}\n\nMajor Actions:\n--------------\n\t=> {{ actions_to_perform | join('\n\t=> ') }}\n\n\e[5mDo you want to continue? (YES/NO)"
+      register: user_confirmation
+      run_once: yes
+
+    - import_tasks: tasks/common/action/abort.yml
+      vars:
+        abort_message: "Aborting the play for all hosts as requested by user."
+        abort_task_name: "Requested by User"
+      when: (user_confirmation.user_input != 'YES') and (user_confirmation.user_input != 'Yes') and (user_confirmation.user_input != 'yes')
+      
+

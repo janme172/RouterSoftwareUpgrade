@@ -1,0 +1,9 @@
+---
+
+- import_playbook: user_input_individual_tasks.yml
+  vars:
+    #choices: ['Take Jsanpy PRE snapshots', 'SET the ISIS overload', 'Attempt RE Switchover', 'Delete ISIS overload', 'Take Jsnapy POST snaphots', 'Compare Jsnapy PRE and POST snapshots']
+    choices: {1: 'Enable GRES and NSR - Juniper', 2: 'Disable GRES and NSR - Juniper', 3: 'Set ISIS Overload - Juniper', 4: 'Delete ISIS Overload - Juniper', 5: 'Exit'}
+
+- import_playbook: base_individual_actions_juniper.yml
+

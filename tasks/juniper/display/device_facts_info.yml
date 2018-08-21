@@ -1,0 +1,6 @@
+---
+- name: "Show Table: Device info/fact"
+  debug:
+    msg: 'Display the Device info/fact table'
+  no_log: True
+  run_once: yes

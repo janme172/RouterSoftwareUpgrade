@@ -1,0 +1,19 @@
+check_pim_neighbor:
+  - command: show pim neighbors
+  - iterate:
+      id: pim-interface-name
+      xpath: //pim-neighbors-information/pim-interface/pim-neighbor 
+      tests:
+        - no-diff: ip-protocol-version
+          err: 'The ip-protocol-version for pim-interface-name {{ id_0 }} has changed from {{pre["ip-protocol-version"]}} to {{post["ip-protocol-version"]}}.'
+          info: 'The ip-protocol-version for pim-interface-name {{ id_0 }} has not changed.'
+        - no-diff: protocol-version
+          err: 'The protocol-version for pim-interface-name {{ id_0 }} has changed from {{pre["protocol-version"]}} to {{post["protocol-version"]}}.'
+          info: 'The protocol-version for pim-interface-name {{ id_0 }} has not changed.'
+        - no-diff: pim-neighbor-address
+          err: 'The pim-neighbor-address for pim-interface-name {{ id_0 }} has changed from {{pre["pim-neighbor-address"]}} to {{post["pim-neighbor-address"]}}.'
+          info: 'The pim-neighbor-address for pim-interface-name {{ id_0 }} has not changed.'
+
+
+tests_include:
+- check_pim_neighbor

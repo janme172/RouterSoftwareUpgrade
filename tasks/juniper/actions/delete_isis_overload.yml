@@ -1,0 +1,10 @@
+---
+- name: "Delete ISIS Overload - {{ task_name | default('') }}"
+  juniper_junos_config:
+    load: 'set'
+    lines:
+      - "delete protocols isis overload"
+    timeout: "{{ timeout | default(180) }}"
+    provider: "{{ provider | default({}) }}"
+    ignore_warning: "statement not found"
+

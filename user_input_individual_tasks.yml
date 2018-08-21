@@ -1,0 +1,27 @@
+---
+
+# Important Note: Please do not chnage the names of tasks. Let them remain as they are.
+- name: Take User Input - What Task to Perform
+  hosts: localhost
+  gather_facts: no
+  vars:
+    available_choices: "{{ choices }}"
+#['Take Jsanpy PRE snapshots', 'SET the ISIS overload', 'Attempt RE Switchover', 'Delete ISIS overload', 'Take Jsnapy POST snaphots', 'Compare Jsnapy PRE and POST snapshots']
+  tasks:
+    - name: User Task Choice Selection
+      pause:
+        #prompt: "-------------------\nPlaybook Details: \n-------------------\n\nDevices:\n--------\n\t{{ hostvars.keys() | sort | join('\n\t') }}\n\nMajor Actions:\n--------------\n\t=> {{ available_choices | join('\n\t=> ') }}\nDo you want to continue? (YES/NO)"
+        prompt: "\e[32m\e[1m\nAvailable Tasks:\n\n{% for x,y in available_choices.items() %} \t{{x}}: {{y}}\n{% endfor %}\n\n\e[5mSelect the Task(Number)"
+      register: user_task_choice
+
+
+    - import_tasks: tasks/common/action/abort.yml
+      vars:
+        abort_message: "Aborting as {% if user_task_choice.user_input|int not in available_choices.keys() %}invalid option selected. valid choices are {% for x,y in available_choices.items() %}[{{x}} for {{y}}], {% endfor %}{% elif available_choices[user_task_choice.user_input|int] == 'Exit' %}Requested by user{% endif %}"
+        abort_task_name: "{% if user_task_choice.user_input|int not in available_choices.keys() %}Invalid Choice{% elif available_choices[user_task_choice.user_input|int] == 'Exit' %}Requested by user{% endif %}"
+      when: user_task_choice.user_input|int not in available_choices.keys() or available_choices[user_task_choice.user_input|int] == 'Exit'
+
+    - name: Save User Choice in a Fact For Use in Next Playbooks
+      set_fact:
+        user_selected_task_choice: "{{ user_task_choice.user_input }}"
+

@@ -1,0 +1,22 @@
+check_interface_admin_status:
+- command: show interfaces descriptions
+- iterate:
+    id: name
+    xpath: physical-interface
+    tests:
+    - is-equal: admin-status, expected_status
+      err: 'The admin status of interface {{id_0}} has changed: PRE: {{pre["admin-status"]}} / POST: {{post["admin-status"]}}'
+      info: 'Admin status have not changed for physical interface {{ pre["admin-status"] }}.'
+    - is-equal: oper-status, up
+      err: '   ERROR: the oper status of interface {{id_0}} has changed: PRE: {{pre["oper-status"]}} / POST: {{post["oper-status"]}}'
+      info: 'Operational status have not changed for  physical interface {{ pre["name"] }}.'
+- iterate:
+    id: name
+    xpath: logical-interface
+    tests:
+    - is-equal: admin-status, up
+      err: 'The admin status of interface {{id_0}} has changed: PRE: {{pre["admin-status"]}} / POST: {{post["admin-status"]}}'
+      info: 'Admin status have not changed for physical interface {{ pre["admin-status"] }}.'
+    - is-equal: oper-status, up
+      err: '   ERROR: the oper status of interface {{id_0}} has changed: PRE: {{pre["oper-status"]}} / POST: {{post["oper-status"]}}'
+      info: 'Operational status have not changed for  physical interface {{ pre["name"] }}.'

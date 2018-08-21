@@ -1,0 +1,6 @@
+---
+- import_tasks: tasks/common/action/abort.yml
+  vars:
+    abort_message: "Aborting the play for host {{ inventory_hostname }} as it is single RE device."
+    abort_task_name: "for devices having single RE."
+  when: not ansible_facts.junos.has_2RE

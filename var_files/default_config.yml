@@ -1,0 +1,4 @@
+---
+run_mode: 'cli'
+temp_dir: 'tmp/'
+jsnapy_parent_test_dir: "jsnapy_tests"

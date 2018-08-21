@@ -1,0 +1,11 @@
+show_software_version:
+- command: show version invoke-on all-routing-engines
+- iterate:
+    id: host-name
+    tests:
+    - contains: package-information[1]/comment, 17.1R2.7
+      err: Found JUNOS software {{post["package-information[1]/comment"]}} on RE {{post["../re-name"]}}
+      info: Checking for JUNOS 17.1R2.7 software release on both routing engines
+    xpath: //software-information
+tests_include:
+- show_software_version

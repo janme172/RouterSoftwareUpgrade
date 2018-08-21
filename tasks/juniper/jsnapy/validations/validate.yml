@@ -1,0 +1,13 @@
+---
+# This validates the interfaces againts the conditions in test file
+# it accepts following parameters: (parameter: default value)
+#     jsnapy_test_files: validate_interface_status.yml
+#     jsnapy_task_name: No Name
+#     jsnapy_test_dir: jsnapy_tests/validations/
+- name: "Validate - {{ jsnapy_task_name | default('No Name') }}"
+  juniper_junos_jsnapy:
+    action: "snapcheck"
+    test_files: "{{ jsnapy_test_files | default('validate_interface_status.yml') }}"
+    dir: "{{ jsnapy_test_dir | default('jsnapy_tests/validations/') }}"
+    logdir: "{{ jsnapy_log_dir |  default('logs/jsnapy/validations/') }}" 
+    provider: "{{ provider | default({}) }}"

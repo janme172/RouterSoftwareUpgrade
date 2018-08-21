@@ -1,0 +1,168 @@
+2018-05-29 08:32:59,370 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-29 08:33:00,624 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-29 08:33:00,624 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-29 08:33:01,608 - ncclient.transport.session - INFO - initialized: session-id=13794 | server_capabilities=<dictionary-keyiterator object at 0x7f9071da3838>
+2018-05-29 08:33:01,628 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-29 08:33:02,310 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-29 08:33:02,310 - jnpr.jsnapy.check - INFO - Tests Included: validate_interface_status 
+2018-05-29 08:33:02,310 - jnpr.jsnapy.check - INFO - [34m******************* Command: show interfaces descriptions *******************
+2018-05-29 08:33:02,329 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is equal to "up" [ 15 matched ]
+2018-05-29 08:33:02,331 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  ge-0/0/1 is not "up". It is "down".
+2018-05-29 08:33:02,333 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  ge-0/0/2 is not "up". It is "down".
+2018-05-29 08:33:02,334 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  ge-0/0/3 is not "up". It is "down".
+2018-05-29 08:33:02,336 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  ge-0/0/4 is not "up". It is "down".
+2018-05-29 08:33:02,337 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  ge-0/0/5 is not "up". It is "down".
+2018-05-29 08:33:02,339 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  xe-0/2/0 is not "up". It is "down".
+2018-05-29 08:33:02,340 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  xe-0/3/0 is not "up". It is "down".
+2018-05-29 08:33:02,345 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  xe-2/0/2 is not "up". It is "down".
+2018-05-29 08:33:02,349 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  ae20 is not "up". It is "down".
+2018-05-29 08:33:02,350 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "oper-status" is not equal to "up" [ 6 matched / 9 failed ]
+2018-05-29 08:33:02,609 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is equal to "up" [ 243 matched ]
+2018-05-29 08:33:02,612 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.11 is not "up". It is "down".
+2018-05-29 08:33:02,614 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.21 is not "up". It is "down".
+2018-05-29 08:33:02,615 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1102 is not "up". It is "down".
+2018-05-29 08:33:02,617 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1103 is not "up". It is "down".
+2018-05-29 08:33:02,618 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1104 is not "up". It is "down".
+2018-05-29 08:33:02,620 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1105 is not "up". It is "down".
+2018-05-29 08:33:02,621 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1107 is not "up". It is "down".
+2018-05-29 08:33:02,623 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1109 is not "up". It is "down".
+2018-05-29 08:33:02,624 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1297 is not "up". It is "down".
+2018-05-29 08:33:02,626 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1476 is not "up". It is "down".
+2018-05-29 08:33:02,627 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1568 is not "up". It is "down".
+2018-05-29 08:33:02,629 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1925 is not "up". It is "down".
+2018-05-29 08:33:02,630 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1970 is not "up". It is "down".
+2018-05-29 08:33:02,632 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/2.0 is not "up". It is "down".
+2018-05-29 08:33:02,633 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/3.100 is not "up". It is "down".
+2018-05-29 08:33:02,635 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.11 is not "up". It is "down".
+2018-05-29 08:33:02,636 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.21 is not "up". It is "down".
+2018-05-29 08:33:02,638 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1103 is not "up". It is "down".
+2018-05-29 08:33:02,639 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1104 is not "up". It is "down".
+2018-05-29 08:33:02,641 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1105 is not "up". It is "down".
+2018-05-29 08:33:02,642 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1107 is not "up". It is "down".
+2018-05-29 08:33:02,644 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1109 is not "up". It is "down".
+2018-05-29 08:33:02,645 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1476 is not "up". It is "down".
+2018-05-29 08:33:02,647 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1568 is not "up". It is "down".
+2018-05-29 08:33:02,648 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1925 is not "up". It is "down".
+2018-05-29 08:33:02,650 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1970 is not "up". It is "down".
+2018-05-29 08:33:02,651 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  xe-0/3/0.69 is not "up". It is "down".
+2018-05-29 08:33:02,656 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  xe-2/0/2.0 is not "up". It is "down".
+2018-05-29 08:33:02,658 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.11 is not "up". It is "down".
+2018-05-29 08:33:02,660 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1101 is not "up". It is "down".
+2018-05-29 08:33:02,661 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1103 is not "up". It is "down".
+2018-05-29 08:33:02,663 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1105 is not "up". It is "down".
+2018-05-29 08:33:02,664 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1107 is not "up". It is "down".
+2018-05-29 08:33:02,666 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1109 is not "up". It is "down".
+2018-05-29 08:33:02,667 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1116 is not "up". It is "down".
+2018-05-29 08:33:02,669 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1117 is not "up". It is "down".
+2018-05-29 08:33:02,670 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1476 is not "up". It is "down".
+2018-05-29 08:33:02,672 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1503 is not "up". It is "down".
+2018-05-29 08:33:02,673 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1970 is not "up". It is "down".
+2018-05-29 08:33:02,675 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.16302 is not "up". It is "down".
+2018-05-29 08:33:02,883 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "oper-status" is not equal to "up" [ 203 matched / 40 failed ]
+2018-05-29 08:33:02,883 - jnpr.jsnapy.operator - INFO - [34m------------------------------- Final Result!! -------------------------------
+2018-05-29 08:33:02,884 - jnpr.jsnapy.operator - INFO - [31mvalidate_interface_status : Failed
+2018-05-29 08:33:02,884 - jnpr.jsnapy.operator - INFO - [32mTotal No of tests passed: 2
+2018-05-29 08:33:02,884 - jnpr.jsnapy.operator - INFO - [31mTotal No of tests failed: 2 
+2018-05-29 08:33:02,884 - jnpr.jsnapy.operator - INFO - [31m[1mOverall Tests failed!!! 
+2018-05-29 08:34:44,359 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-29 08:34:44,884 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-29 08:34:44,884 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-29 08:34:45,988 - ncclient.transport.session - INFO - initialized: session-id=13842 | server_capabilities=<dictionary-keyiterator object at 0x7fdbe415e838>
+2018-05-29 08:34:46,008 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-29 08:34:46,688 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe30 *****************************
+2018-05-29 08:34:46,689 - jnpr.jsnapy.check - INFO - Tests Included: validate_interface_status 
+2018-05-29 08:34:46,689 - jnpr.jsnapy.check - INFO - [34m******************* Command: show interfaces descriptions *******************
+2018-05-29 08:34:46,707 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is equal to "up" [ 15 matched ]
+2018-05-29 08:34:46,710 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  ge-0/0/1 is not "up". It is "down".
+2018-05-29 08:34:46,712 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  ge-0/0/2 is not "up". It is "down".
+2018-05-29 08:34:46,713 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  ge-0/0/3 is not "up". It is "down".
+2018-05-29 08:34:46,715 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  ge-0/0/4 is not "up". It is "down".
+2018-05-29 08:34:46,716 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  ge-0/0/5 is not "up". It is "down".
+2018-05-29 08:34:46,718 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  xe-0/2/0 is not "up". It is "down".
+2018-05-29 08:34:46,719 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  xe-0/3/0 is not "up". It is "down".
+2018-05-29 08:34:46,724 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  xe-2/0/2 is not "up". It is "down".
+2018-05-29 08:34:46,728 - jnpr.jsnapy.operator - INFO - The oper status of  physical-interface  ae20 is not "up". It is "down".
+2018-05-29 08:34:46,729 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "oper-status" is not equal to "up" [ 6 matched / 9 failed ]
+2018-05-29 08:34:46,984 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is equal to "up" [ 243 matched ]
+2018-05-29 08:34:46,987 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.11 is not "up". It is "down".
+2018-05-29 08:34:46,989 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.21 is not "up". It is "down".
+2018-05-29 08:34:46,990 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1102 is not "up". It is "down".
+2018-05-29 08:34:46,992 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1103 is not "up". It is "down".
+2018-05-29 08:34:46,993 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1104 is not "up". It is "down".
+2018-05-29 08:34:46,995 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1105 is not "up". It is "down".
+2018-05-29 08:34:46,996 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1107 is not "up". It is "down".
+2018-05-29 08:34:46,998 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1109 is not "up". It is "down".
+2018-05-29 08:34:46,999 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1297 is not "up". It is "down".
+2018-05-29 08:34:47,001 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1476 is not "up". It is "down".
+2018-05-29 08:34:47,003 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1568 is not "up". It is "down".
+2018-05-29 08:34:47,004 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1925 is not "up". It is "down".
+2018-05-29 08:34:47,006 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/1.1970 is not "up". It is "down".
+2018-05-29 08:34:47,007 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/2.0 is not "up". It is "down".
+2018-05-29 08:34:47,009 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/3.100 is not "up". It is "down".
+2018-05-29 08:34:47,010 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.11 is not "up". It is "down".
+2018-05-29 08:34:47,012 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.21 is not "up". It is "down".
+2018-05-29 08:34:47,013 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1103 is not "up". It is "down".
+2018-05-29 08:34:47,015 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1104 is not "up". It is "down".
+2018-05-29 08:34:47,016 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1105 is not "up". It is "down".
+2018-05-29 08:34:47,018 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1107 is not "up". It is "down".
+2018-05-29 08:34:47,019 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1109 is not "up". It is "down".
+2018-05-29 08:34:47,021 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1476 is not "up". It is "down".
+2018-05-29 08:34:47,022 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1568 is not "up". It is "down".
+2018-05-29 08:34:47,024 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1925 is not "up". It is "down".
+2018-05-29 08:34:47,025 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ge-0/0/4.1970 is not "up". It is "down".
+2018-05-29 08:34:47,027 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  xe-0/3/0.69 is not "up". It is "down".
+2018-05-29 08:34:47,032 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  xe-2/0/2.0 is not "up". It is "down".
+2018-05-29 08:34:47,034 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.11 is not "up". It is "down".
+2018-05-29 08:34:47,036 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1101 is not "up". It is "down".
+2018-05-29 08:34:47,037 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1103 is not "up". It is "down".
+2018-05-29 08:34:47,039 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1105 is not "up". It is "down".
+2018-05-29 08:34:47,040 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1107 is not "up". It is "down".
+2018-05-29 08:34:47,042 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1109 is not "up". It is "down".
+2018-05-29 08:34:47,043 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1116 is not "up". It is "down".
+2018-05-29 08:34:47,045 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1117 is not "up". It is "down".
+2018-05-29 08:34:47,046 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1476 is not "up". It is "down".
+2018-05-29 08:34:47,048 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1503 is not "up". It is "down".
+2018-05-29 08:34:47,049 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.1970 is not "up". It is "down".
+2018-05-29 08:34:47,051 - jnpr.jsnapy.operator - INFO - The oper status of  logical-interface  ae20.16302 is not "up". It is "down".
+2018-05-29 08:34:47,259 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "oper-status" is not equal to "up" [ 203 matched / 40 failed ]
+2018-05-29 08:34:47,260 - jnpr.jsnapy.operator - INFO - [34m------------------------------- Final Result!! -------------------------------
+2018-05-29 08:34:47,260 - jnpr.jsnapy.operator - INFO - [31mvalidate_interface_status : Failed
+2018-05-29 08:34:47,260 - jnpr.jsnapy.operator - INFO - [32mTotal No of tests passed: 2
+2018-05-29 08:34:47,260 - jnpr.jsnapy.operator - INFO - [31mTotal No of tests failed: 2 
+2018-05-29 08:34:47,261 - jnpr.jsnapy.operator - INFO - [31m[1mOverall Tests failed!!! 

@@ -1,0 +1,8 @@
+---
+
+- import_playbook: user_confirmation_before_play_start.yml
+  vars:
+    actions: ['Deteremine the Backup RE', 'Copy the package from remote to local Ansible machine', 'Copy the package from local Ansible machine to device', 'Disable GRES and NSR', 'Apply the upgrade/downgrade to Backup RE']
+
+- import_playbook: base_apply_software_backup_re_juniper.yml
+

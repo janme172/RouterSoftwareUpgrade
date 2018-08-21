@@ -1,0 +1,258 @@
+---
+- name: Playbook for upgrading the backup Routing Engine on Juniper Routers
+#  hosts: test2nqe30
+  hosts: all
+  max_fail_percentage: 100
+  connection: local
+  gather_facts: no
+
+  # include the customized junos role
+  roles:
+    - Juniper.junos
+
+  # take user inputs
+  vars_prompt:
+    - name: "device_user_name"
+      prompt: "\n\nTDC Username"
+      private: no
+      default: "{{lookup('env','USER')}}"
+    - name: "device_user_passwd"
+      prompt: "password"
+      private: yes
+    - name: "software_version_to_install"
+      prompt: "Please provide the software version to install"
+      private: no
+    - name: "pkg_remote_machine"
+      prompt: "IP of remote machine having the package file"
+      default: "62.243.147.45"
+      private: no
+    - name: "pkg_remote_host_ssh_user"
+      prompt: "Username for host containing Package file"
+      private: no
+    - name: "pkg_remote_host_ssh_pass"
+      prompt: "Password for host containing Package file"
+      private: yes
+    - name: "pkg_on_remote_machine"
+      prompt: "Package full path(with filename)"
+      private: no
+
+  # Set playbook variables
+  vars:
+    pkg_dir_on_routers: "/var/tmp"
+    project_temp_directory: "/tmp"
+    provider_details:
+      username: "{{ device_user_name }}"
+      password: "{{ device_user_passwd  }}"
+      host: "{{ inventory_hostname }}"
+
+  # All Tasks
+  pre_tasks:
+    # Set Date and logging details    
+    - import_tasks: tasks/common/set/fact/start_date_and_time.yml
+    - import_tasks: tasks/common/set/fact/logging_details.yml
+   
+    # Retrieve the package file name from path and store it in a variable
+    - block:
+        - name: Set the package file name variable
+          set_fact:
+            pkg_filename: "{{ pkg_on_remote_machine | basename }}"
+
+    # Retrive the version from file name
+    - name: Get software version from filename
+      set_fact:
+            pkg_file_version: "{{ pkg_filename | regex_search('(\\d{2}\\..*\\d)') |  upper }}"
+
+    # Abort incase the file is not of desired version
+    - import_tasks: tasks/common/action/abort.yml
+      vars:
+        abort_message: "Aborting the play for host {{ inventory_hostname }} as {% if pkg_file_version|upper != software_version_to_install|upper %}the provided version({{software_version_to_install}}) do not match with version fetched from filename({{pkg_file_version}}).{% elif not pkg_on_remote_machine.startswith('/')%}Only absolute paths allowed for package full path.{%endif%}"
+        abort_task_name: "{% if pkg_file_version|upper != software_version_to_install|upper %}Provided version and Package file version mismatch.{% elif not pkg_on_remote_machine.startswith('/')%}Package path is not a absolute path{%endif%}"
+      when: (pkg_file_version|upper != software_version_to_install|upper) or (not pkg_on_remote_machine.startswith('/'))
+
+  tasks:
+
+    - block:
+        # Gather the router facts/info. No configuration data will be gathered.
+        - import_tasks: tasks/juniper/facts/gather_facts_without_config.yml
+      rescue:
+        # Alert user about abort of play as unable gather the facts.
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as there was issue while gathering info/facts about the device."
+            abort_task_name: "Issue in info/fact gathering."
+      vars:
+        provider: "{{ provider_details }}"
+
+    # Dummy task for displaying the device info table      
+    - import_tasks: tasks/juniper/display/device_facts_info.yml
+
+    # Abort and Alert user if Single RE device
+    - import_tasks: tasks/juniper/actions/abort_for_single_RE.yml
+
+    - block:
+        # Change backup RE from re1 to re0 if re0 is the backup
+        - import_tasks: tasks/juniper/facts/check_and_set_backup_re.yml
+
+        - name: Abort if unable to determine backup RE
+          fail:
+          when: backup_re is undefined
+      rescue:
+        # Alert user about abort of play as unable gather the facts.
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as unable to determine the backup RE."
+            abort_task_name: "Issue in determining the backup RE."
+
+    - block:
+        # get and store the current software version of backup re
+        - import_tasks: tasks/juniper/facts/set_software_version_backup_re.yml
+      rescue:
+        # Alert user about abort of play as unable gather the facts.
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as unable to determine the software version of backup RE {{ backup_re }}."
+            abort_task_name: "Issue in determining software version of backup RE."
+
+    - block:
+        # Check if backup re already don't have the desired version
+        - name: Verfy that backup RE has different software version than that to be installed.
+          assert:
+            that:
+              - "software_version_to_install|lower != software_version_backup_re|lower"
+#              - "software_version_to_install|lower == software_version_backup_re|lower" # Uncomment for DEMO
+            msg: "Device already have the desired software version {{software_version_to_install}} installed on backup RE {{ backup_re }}."
+      rescue:
+        # Alert user about abort of play as unable gather the facts.
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as software version {{software_version_to_install}} already installed on backup RE {{ backup_re }}."
+            abort_task_name: "Device already have the desired software version."
+
+    - block:
+        # Copy package to local folder on ansible machine
+        - name: Copy package from remote folder to local folder
+          fetch:
+            src: "{{ pkg_on_remote_machine }}"
+            dest: "{{ project_temp_directory }}/{{ pkg_filename }}"
+            flat: yes
+          delegate_to: "{{ pkg_remote_machine }}"
+          run_once: yes
+          vars:
+            ansible_ssh_user: "{{ pkg_remote_host_ssh_user }}"
+            ansible_ssh_pass: "{{ pkg_remote_host_ssh_pass }}"
+      rescue:
+        # abort incase of error in copying the package to local ansible machine
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as there was issue while getting the software package file {{ pkg_on_remote_machine }} from remote host {{ pkg_remote_machine  }}."
+            abort_task_name: "Issue in getting software package."
+
+    - block:
+        # copy the package from local ansible machine to device
+        - name: Copy package from local folder to device folder
+          junos_scp:
+            src: "{{ project_temp_directory }}/{{ pkg_filename }}"
+            dest: "{{ pkg_dir_on_routers }}"
+            #provider:
+            #  host: "{{ inventory_hostname }}"
+            provider: "{{ provider_details }}"
+
+      rescue:
+        # Abort incase of error in copying the package to device
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as there was issue while copying the software package file {{ pkg_filename  }}  from {{ project_temp_directory }} to router at {{ pkg_dir_on_routers  }}."
+            abort_task_name: "Issue in copying software package to router."
+
+    - block:
+        # Disable GRES and NSR before applying the upgrade to backup RE
+        - import_tasks: tasks/juniper/actions/disable_GRES_and_NSR.yml
+          vars:
+            task_name: "Before upgrading the backup RE"
+      rescue:
+        # abort incase unable to disable GRES and NSR
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as there was issue while disabling the GRES and NSR."
+            abort_task_name: "Issue in disabling the GRES and NSR."
+      vars:
+        provider: "{{ provider_details }}"
+
+    - block:
+        # Install the software on backup RE
+#        - import_tasks: tasks/juniper/actions/execute_command.yml
+#          vars:
+#            command: "request system software add {{ pkg_dir_on_routers }}/{{ pkg_filename }} validate reboot {{ backup_re }}"
+##            command: "file list /var/tmp/"  # Uncomment for DEMO
+#            task_name: "Upgrade Backup Routing Engine"
+#            timeout: "500"
+        # try to install the software package on backup RE
+
+
+        - name: "Install software on Backup Routing Engine"
+          juniper_junos_command:
+            commands:
+              - "request system software add  {{ pkg_dir_on_routers }}/{{ pkg_filename }} no-validate reboot {{ backup_re }}"
+            timeout: 200
+            provider: "{{ provider_details }}"
+          register: response_upgrade_bkp_re
+          failed_when:
+            - ('module_stderr' in response_upgrade_bkp_re) and not ('SessionCloseError' in response_upgrade_bkp_re.module_stderr or 'TimeoutExpiredError' in response_upgrade_bkp_re.module_stderr)
+
+
+      rescue:
+        
+        - block:
+            # incase of any error in installing the software try to ENable the GRES and NSR automatically
+            - import_tasks: tasks/juniper/actions/enable_GRES_and_NSR.yml
+              vars:
+                task_name: "After failure in Installing the software"
+          rescue:
+            # Incase unable to ENable GRES and NSR. Display message to user to manually take care of that
+            - import_tasks: tasks/common/display/message.yml
+              vars:
+                message_to_display: "For host {{ inventory_hostname }} there was an issue in enabling the GRES and NSR after failure in installing the software. Please manually enable GRES and NSR."
+                message_task_name: "Message for issue in enabling the GRES and NSR after failure in installing the software"
+
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as there was issue while installing {{ pkg_filename }}  on backup RE {{ backup_re }}."
+            abort_task_name: "Issue in installing software on backup RE."
+      vars:
+        provider: "{{ provider_details }}"
+    #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#    - name: "Upgrade Backup Routing Engine - using request vmhost command"
+#      juniper_junos_command:
+#        commands:
+#          - "request vmhost software add  {{ pkg_dir_on_routers }}/{{ pkg_filename }} no-validate reboot {{ backup_re }}"
+#        timeout: 500
+#        provider: "{{ provider_details }}"
+#      register: upgrade_vmhost_result
+#      ignore_errors: yes
+#
+#    - name: "Upgrade Backup Routing Engine - using request system command"
+#      juniper_junos_command:
+#        commands:
+#           - "request system software add {{ pkg_dir_on_routers }}/{{ pkg_filename }} validate reboot {{ backup_re }}"
+#        timeout: 500
+#        provider: "{{ provider_details }}"
+#      register: upgrade_system_result
+#      when: upgrade_vmhost_result is failed
+#      ignore_errors: yes
+
+
+#    - block:
+#        - block:
+#            - import_tasks: tasks/juniper/actions/enable_GRES_and_NSR.yml
+#              vars:
+#                task_name: "After failure in Installing the software"
+#          rescue:
+#            - import_tasks: tasks/common/display/message.yml
+#              vars:
+#                message_to_display: "For host {{ inventory_hostname }} there was an issue in enabling the GRES and NSR after failure in installing the software. Please manually enable GRES and NSR."
+#                message_task_name: "Message for issue in enabling the GRES and NSR after failure in installing the software"
+#      vars:
+#        provider: "{{ provider_details }}"
+#      when: upgrade_vmhost_result is failed and upgrade_system_result is failed and 'RpcTimeoutError' not in upgrade_system_result.msg and 'RpcTimeoutError' not in upgrade_vmhost_result.msg
+

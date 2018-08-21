@@ -1,0 +1,71 @@
+---
+
+- name: Playbook for validations involved in juniper software upgrade.
+  hosts: all
+  max_fail_percentage: 100
+  connection: local
+  gather_facts: no
+
+  # include the customized junos role
+  roles:
+    - Juniper.junos
+
+  # Define the variables.
+  vars_prompt:
+    - name: "device_user_name"
+      prompt: "\n\nTDC Username"
+      private: no
+      default: "{{lookup('env','USER')}}"
+    - name: "device_user_passwd"
+      prompt: "password"
+      private: yes
+
+  # Set he playbook variables
+  vars:
+    jsnapy_parent_test_dir: "jsnapy_tests"
+    provider_details: 
+      username: "{{ device_user_name }}"
+      password: "{{ device_user_passwd  }}"
+      host: "{{ inventory_hostname }}" 
+
+  # Perform PRE activities      
+  pre_tasks:
+    # Set date and logging details
+    - import_tasks: tasks/common/set/fact/start_date_and_time.yml
+    - import_tasks: tasks/common/set/fact/logging_details.yml
+
+  # All Tasks
+  tasks:
+
+    - block:
+        # Gather the router facts/info. No configuration data will be gathered.
+        - import_tasks: tasks/juniper/facts/gather_facts_without_config.yml
+
+      rescue:
+        # Alert user about abort of play as únable gather the facts.
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as there was issue while gathering info/fácts about the device."
+            abort_task_name: "Issue in info/fact gathering."
+      vars:
+        provider: "{{ provider_details }}" 
+
+    # Dummy task for display the device info table    
+    - import_tasks: tasks/juniper/display/device_facts_info.yml
+
+    - block:
+        # Perform PRE Jsnapy validations.
+        - import_tasks: tasks/juniper/jsnapy/validations/validate.yml
+          vars:
+            jsnapy_test_files: [validate_interface_status.yml]
+            jsnapy_task_name: "Interface(oper and admin) status to be up"
+            jsnapy_test_dir: "{{ jsnapy_parent_test_dir }}/validations/"
+            jsnapy_log_dir: "{{ play_log_dir }}/jsnapy/validations/"
+      rescue:
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as unable to take PRE Jsnapy snapshots."
+            abort_task_name: "Issue while taking Jsnapy PRE snapshots"
+      vars:
+        provider: "{{ provider_details }}"
+

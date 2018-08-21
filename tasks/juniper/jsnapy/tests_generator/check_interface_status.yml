@@ -1,0 +1,11 @@
+---
+# This generates the YAML Jsnapy tests file for PRE, POST and COMPARE on junos devices.
+# It accepts following parameters:(parameter: default value)
+#     jinga2_source: jinga2_templates/jsnapy/checks/check_interface_admin_status.yml.j2
+#     jsnapy_test_dest: jsnapy_tests/checks/check_interface_admin_status.yml
+#     test_interface_nodes: ['physical-interface', 'logical-interface']
+- name: Generate the YML test template for interface validation on Juniper routers
+  template:
+    src: "{{ jinga2_source | default('jinga2_templates/jsnapy/checks/check_interface_status.yml.j2') }}"
+    dest: "{{ jsnapy_test_dest | default('jsnapy_tests/checks/check_interface_status.yml') }}"
+  delegate_to: localhost

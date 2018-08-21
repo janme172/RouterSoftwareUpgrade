@@ -1,0 +1,6 @@
+---
+- name: Set backup RE variable to re0 if RE0 is the backup RE
+  set_fact:
+    backup_re: "re0"
+  when:  ansible_facts.junos.RE0.mastership_state == 'backup'
+

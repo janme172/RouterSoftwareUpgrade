@@ -1,0 +1,15 @@
+check_interface_status:
+- command: show interfaces descriptions
+{% for interface_node in test_interface_nodes | default(['physical-interface', 'logical-interface'])  %}
+{% raw %}
+- iterate:
+    id: name
+    xpath: {% endraw %}{{ interface_node }}{% raw %}
+    tests:
+    - no-diff: admin-status
+      err: 'The admin status of {% endraw %} {{ interface_node }} {% raw %} {{ id_0 }} has changed from "{{ pre["admin-status"] }}" to "{{ post["admin-status"] }}".'
+      info: 'The admin status for {% endraw %} {{ interface_node }} {% raw %} {{ id_0 }} has not changed.'
+    - no-diff: oper-status
+      err: 'The oper status of {% endraw %} {{ interface_node }} {% raw %} {{ id_0 }} has changed from "{{ post["admin-status"] }}" to "{{ post["oper-status"] }}".'
+      info: 'The oper status for  {% endraw %} {{ interface_node }} {% raw %} {{ id_0 }} has not changed' {% endraw %}
+{% endfor %}

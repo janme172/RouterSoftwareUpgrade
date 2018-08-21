@@ -1,0 +1,14 @@
+check_dhcp_relay_bindings_summary:
+  - command: show dhcp relay binding summary
+    - iterate:
+      xpath: //dhcp-relay-binding-information/binding-summary
+      tests:
+        - delta: bound-count, 20%
+          err: 'The bound-count count has changed more than 20 percent from {{pre["bound-count"]}} to {{post["bound-count"]}}.'
+          info: 'The bound-count count has not changed more than 20 percent'
+
+
+# Include the tests to run
+tests_include:
+- check_dhcp_relay_bindings_summary
+

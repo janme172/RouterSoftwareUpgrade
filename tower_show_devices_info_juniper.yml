@@ -1,0 +1,3 @@
+---
+
+- import_playbook: base_show_devices_info_juniper.yml

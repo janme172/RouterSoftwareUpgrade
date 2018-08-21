@@ -1,0 +1,60 @@
+---
+- hosts: all
+  gather_facts: no
+  connection: local
+  roles:
+    - Juniper.junos
+  vars_prompt:
+#    - prompt: "Enter the package name"
+#      name: "pkg_file_name"
+#      private: no
+#      default: "jinstall-ppc-17.4R1-S3.3-signed.tgz"
+#    - prompt: "Package URL"
+#      name: "pkg_url"
+      
+  tasks:
+#    - block:
+#        # Gather the router facts/info. No configuration data will be gathered.
+#        - import_tasks: tasks/juniper/facts/gather_facts_without_config.yml
+#      rescue:
+#        # Alert user about abort of play as únable gather the facts.
+#        - import_tasks: tasks/common/action/abort.yml
+#          vars:
+#            abort_message: "Aborting the play for host {{ inventory_hostname }} as there was issue while gathering info/fácts about the device."
+#            abort_task_name: "Issue in info/fact gathering."
+#
+#    # Dummy task for displaying the device info table
+#    - import_tasks: tasks/juniper/display/device_facts_info.yml
+#
+#    # Abort and Alert user if Single RE device
+##    - import_tasks: tasks/juniper/actions/abort_for_single_RE.yml
+#    - block:
+#        - name: Determine the backup RE
+#          set_fact:
+#              bkp_re: "{% if ansible_facts.junos.RE0.mastership_state == 'backup' %}re0{% elif  ansible_facts.junos.RE1.mastership_state == 'backup' %}re1{% else %}{% endif %}"
+#          failed_when: bkp_re not in ['re0', 're1']
+#      rescue:
+#        - name: Aborting - Unable to determine the Backup RE
+#          fail: 
+#            msg: Unable to determine the Backup RE.
+    - set_fact:
+        m: "msg"
+ 
+    - debug: '{ "{{m}}": "Hello Done" }'
+          
+          
+    - fail:
+
+    - name: Install package on backup RE
+      juniper_junos_software_custom:
+        all_re: no
+        url: 
+        kwargs:
+          re1: yes
+  #      local_package: /home/ansible/Projects/AnsibleTower/RouterSoftwareUpgrade/tmp/jinstall-ppc-17.1R2-S5-signed.tgz
+        remote_package: "{{ pkg_url }}"
+        validate: no
+        reboot: yes
+#        reboot_pause: 500
+#        timeout: 900
+

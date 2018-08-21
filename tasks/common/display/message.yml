@@ -1,0 +1,8 @@
+---
+# This displays the custom message provided.
+# It accepts following variables:(parameter: default value)
+#     message_task_name: 'Printing the message'
+#     message_to_display: 'Oops!!!. No message to display.'
+- name: "{{ message_task_name | default('Printing the message') }}"
+  debug:
+    msg: "{{ message_to_display | default('Oops!!!. No message to display.') }}"

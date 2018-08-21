@@ -1,0 +1,200 @@
+---
+- name: Playbook for applying software Master or Backup RE or to Both REs
+  hosts: all
+  gather_facts: no
+  connection: local
+
+  roles:
+    - Juniper.junos
+
+  vars_prompt:
+    - name: "device_user_name"
+      prompt: "\n\nMID"
+      private: no
+      default: "{{lookup('env','USER')}}"
+
+    - name: "device_user_passwd"
+      prompt: "TACACs password"
+      private: yes
+
+    - prompt: "Package URL"
+      name: "pkg_url"
+      private: no
+
+    - prompt: 'Checksum for the package'
+      name: 'pkg_checksum'
+      private: no
+  vars_files:
+    - var_files/default_config.yml
+
+  vars:
+    valid_tags: ['apply_to_backup', 'apply_to_master', 'apply_to_both', 'disable_gres_and_nsr']
+    valid_content_types_for_url: ['application/x-gtar-compressed']
+    actions_apply_to_backup: ['Abort for Single RE devices', 'Copy the package to device', 'Delete old package files from both routing engines if any.', 'Perform request system storage cleanup', 'Apply software to backup RE', 'Reboot']
+    actions_apply_to_master: ['Copy the package to device', 'Delete old package files from both routing engines if any.', 'Perform request system storage cleanup', 'Apply software to master RE', 'Reboot']
+    actions_apply_to_both: ['Abort for Single RE devices', 'Copy the package to device', 'Delete old package files from both routing engines if any.', 'Perform request system storage cleanup', 'Apply software to both REs', 'Reboot']
+    provider_details:
+      username: "{{ device_user_name }}"
+      password: "{{ device_user_passwd  }}"
+      host: "{{ inventory_hostname }}"
+  
+  pre_tasks:
+
+    - block:
+        - name: Validate if URL exists
+          uri:
+            url: "{{ pkg_url }}"
+            method: HEAD
+          run_once: yes
+          register: resp_url_validation
+          any_errors_fatal: yes
+
+        - name: 'Aborting - {% if resp_url_validation.content_type not in valid_content_types_for_url %}Invalid url file type.{% elif hostvars[inventory_hostname]["ansible_run_tags"]|count == 1 and hostvars[inventory_hostname]["ansible_run_tags"] == ["all"] %}No tag provided.{% elif hostvars[inventory_hostname]["ansible_run_tags"]|count == 2 %}Invalid combination of tags.{% elif hostvars[inventory_hostname]["ansible_run_tags"]|count > 2%}Not more than two tags allowed.{% elif hostvars[inventory_hostname]["ansible_skip_tags"] != [] %}skip-tags are not allowed for this playbook.{% elif hostvars[inventory_hostname]["ansible_run_tags"]|difference(valid_tags) != []%}Invalid tag provided.{% endif %}'
+          fail:
+            msg: '{% if resp_url_validation.content_type not in valid_content_types_for_url %}Invalid url file type. Valid files are {{valid_content_types_for_url}}{% elif hostvars[inventory_hostname]["ansible_run_tags"]|count  ==  1 and hostvars[inventory_hostname]["ansible_run_tags"] == ["all"] %}Atleast provide one tag out of {{valid_tags}}.{% elif hostvars[inventory_hostname]["ansible_run_tags"]|count == 2 and "disable_gres_and_nsr" not in hostvars[inventory_hostname]["ansible_run_tags"] %}Not allowed- combination of tags for playbook. Valid combination is to use "disable_gres_and_nsr" tag with othet tags.{% elif hostvars[inventory_hostname]["ansible_skip_tags"] != [] %}skip-tags are not allowed for this playbook.{% elif hostvars[inventory_hostname]["ansible_run_tags"]|count > 2%}Not more than two tags allowed for this playbook.{% elif hostvars[inventory_hostname]["ansible_run_tags"]|difference(valid_tags) != []%}Invalid tag provided. Valid tags are {{valid_tags}}.{% endif %}'
+          run_once: yes
+          when: (resp_url_validation.content_type not in valid_content_types_for_url) or ( hostvars[inventory_hostname]["ansible_run_tags"]|count == 1 and hostvars[inventory_hostname]["ansible_run_tags"] == ['all']) or ( hostvars[inventory_hostname]["ansible_run_tags"]|count == 2 and "disable_gres_and_nsr" not in hostvars[inventory_hostname]["ansible_run_tags"]) or ( hostvars[inventory_hostname]["ansible_run_tags"]|count > 2) or (hostvars[inventory_hostname]["ansible_skip_tags"] != []) or (hostvars[inventory_hostname]["ansible_run_tags"]|difference(valid_tags) != [])
+          any_errors_fatal: yes
+
+      tags:
+        - always
+
+    - block:
+        - name: User Confirmation
+          pause:
+            prompt: "\e[32m\e[1m\n-------------------\nPlaybook Details: \n-------------------\n\nDevices:\n--------\n\t{{ hostvars.keys() | sort | join('\n\t') }}\n\nMajor Actions:\n--------------\n\t=> {% if hostvars[inventory_hostname]['ansible_run_tags'][0] == 'apply_to_backup' %}{{  actions_apply_to_backup| join('\n\t=> ') }}{% elif hostvars[inventory_hostname]['ansible_run_tags'][0] == 'apply_to_master' %}{{  actions_apply_to_master| join('\n\t=> ') }}{% elif hostvars[inventory_hostname]['ansible_run_tags'][0] == 'apply_to_both' %}{{  actions_apply_to_both| join('\n\t=> ') }}{% endif %}\n\n\n\e[5mDo you want to continue? (YES/NO)"
+          register: user_confirmation
+          run_once: yes
+
+        - name: Aborting - As requested by user
+          fail:
+            msg: User aboerted the Play
+          run_once: yes
+          when: user_confirmation.user_input not in ['yes', 'Yes', 'YES']
+          any_errors_fatal: yes
+          
+      tags:
+        - always
+
+
+    # Set Date and logging details
+    - import_tasks: tasks/common/set/fact/start_date_and_time.yml
+    - import_tasks: tasks/common/set/fact/logging_details.yml
+
+  tasks:
+ 
+    - block:
+        # Gather the router facts/info. No configuration data will be gathered.
+        - import_tasks: tasks/juniper/facts/gather_facts_without_config.yml
+      rescue:
+        # Alert user about abort of play as unable gather the facts.
+        - import_tasks: tasks/common/action/abort.yml
+          vars:
+            abort_message: "Aborting the play for host {{ inventory_hostname }} as there was issue while gathering info/facts about the device."
+            abort_task_name: "Issue in info/fact gathering."
+      vars:
+        provider: "{{ provider_details }}"
+      tags: 
+        - always
+
+    # Dummy task for displaying the device info table
+    - import_tasks: tasks/juniper/display/device_facts_info.yml
+      tags:
+        - always
+
+    # Abort and Alert user if Single RE device
+    - import_tasks: tasks/juniper/actions/abort_for_single_RE.yml
+      tags: 
+        - never
+        - apply_to_backup
+        - apply_to_both
+
+    - name: Download the package from URL & Verify the checksum
+      get_url:
+        url: "{{ pkg_url }}"
+        dest: "{{ temp_dir }}"
+        checksum: "{{ pkg_checksum|lower }}"
+      register: resp_download_pkg
+      run_once: yes
+      tags:
+        - never
+        - apply_to_backup
+        - apply_to_master
+        - apply_to_both
+     
+
+    - name: Identify the Backup RE
+      set_fact:
+        bkp_re: "{% if ansible_facts.junos.RE0.mastership_state == 'backup' %}re0{% elif  ansible_facts.junos.RE1.mastership_state == 'backup' %}re1{% else %}{% endif %}"
+      tags:
+        - never
+        - apply_to_backup
+
+    - name: Set variables for Master RE
+      set_fact:
+          jjsc_kwargs_master: "{ {% if ansible_facts.junos.master == 'RE0' %}'re0': true{% elif ansible_facts.junos.master == 'RE1' %}'re1': true{% endif %} }"
+      tags: 
+        - never
+        - apply_to_master
+
+    - name: Set variables for Backup RE
+      set_fact:
+        jjsc_kwargs_bkp: "{ {% if bkp_re == 're0' %}'re0': true{% elif  bkp_re == 're1' %}'re1': true{% endif %} }"  
+      tags:
+        - never
+        - apply_to_backup
+
+    - name: "Delete the old package files on device. All '.tgz' files in /var/tmp/."
+      juniper_junos_command:
+        commands: ['file delete re0:/var/tmp/*tgz', 'file delete re1:/var/tmp/*tgz']
+      tags:
+        - never
+        - apply_to_backup
+        - apply_to_master
+        - apply_to_both
+ 
+    - import_tasks: tasks/juniper/actions/disable_GRES_and_NSR.yml
+      vars:
+        task_name: "Before applying the software to {% if 'apply_to_backup' in hostvars[inventory_hostname]['ansible_run_tags'] %}Backup RE{% elif 'apply_to_master' in hostvars[inventory_hostname]['ansible_run_tags'] %}Master RE{% elif 'apply_to_both' in hostvars[inventory_hostname]['ansible_run_tags'] %}Both REs{%endif%}"
+ 
+
+    - name: Install package on Master RE
+      juniper_junos_software_custom:
+        all_re: no
+        kwargs: "{{ jjsc_kwargs_master }}"
+        local_package: "{{ resp_download_pkg.dest }}"
+        validate: no
+        reboot: yes
+        reboot_pause: 50
+        timeout: 1200
+      tags:
+        - never
+        - apply_to_master
+
+    - name: Install package on Backup RE
+      juniper_junos_software_custom:
+        all_re: no
+        kwargs: "{{ jjsc_kwargs_bkp }}"
+        local_package: "{{ resp_download_pkg.dest }}"
+        validate: no
+        reboot: yes
+        reboot_pause: 50
+        timeout: 1200
+      tags:
+        - never
+        - apply_to_backup
+
+    - name: Install package on Both REs
+      juniper_junos_software_custom:
+        all_re: yes
+        local_package: "{{ resp_download_pkg.dest }}"
+        validate: no
+        reboot: yes
+        reboot_pause: 50
+        timeout: 1200
+      tags:
+        - never
+        - apply_to_both
+
+
+

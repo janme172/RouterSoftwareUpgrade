@@ -1,0 +1,13 @@
+---
+# This takes the pre snap of the interfaces
+# it accepts following parameters: (parameter: default value)
+#     jsnapy_test_files: check_interface_status.yml
+#     jsnapy_task_name: 'No Name'
+#     jsnapy_test_dir: jsnapy_tests/checks/
+- name: "Take PRE Snapshot - {{ jsnapy_task_name | default('No Name') }}"
+  juniper_junos_jsnapy:
+    action: "snap_pre"
+    test_files: "{{ jsnapy_test_files | default('check_interface_status.yml') }}"
+    dir: "{{ jsnapy_test_dir | default('jsnapy_tests/checks/') }}"
+    logdir: "{{ jsnapy_log_dir |  default('logs/jsnapy/checks/') }}"
+    provider: "{{ provider | default({}) }}"

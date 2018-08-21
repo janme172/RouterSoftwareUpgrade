@@ -1,0 +1,6 @@
+---
+#- import_playbook: user_confirmation_before_play_start.yml
+#  vars:
+#    actions: ['Display Devices Information']
+
+- import_playbook: base_show_devices_info_juniper.yml

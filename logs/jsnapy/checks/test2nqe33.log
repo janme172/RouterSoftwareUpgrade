@@ -1,0 +1,496 @@
+2018-05-28 09:49:58,258 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 09:49:58,429 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 09:49:58,429 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 09:49:59,425 - ncclient.transport.session - INFO - initialized: session-id=12504 | server_capabilities=<dictionary-keyiterator object at 0x7f349b715838>
+2018-05-28 09:49:59,503 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe33 *****************************
+2018-05-28 09:49:59,503 - jnpr.jsnapy.check - INFO - Tests Included: check_interface_status 
+2018-05-28 09:49:59,503 - jnpr.jsnapy.check - INFO - [34m******************* Command: show interfaces descriptions *******************
+2018-05-28 09:49:59,519 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is same in pre and post snapshot [ 12 matched ]
+2018-05-28 09:49:59,533 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is same in pre and post snapshot [ 12 matched ]
+2018-05-28 09:49:59,654 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is same in pre and post snapshot [ 117 matched ]
+2018-05-28 09:49:59,782 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is same in pre and post snapshot [ 117 matched ]
+2018-05-28 09:49:59,782 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe33 *****************************
+2018-05-28 09:49:59,783 - jnpr.jsnapy.check - INFO - Tests Included: check_isis_interface 
+2018-05-28 09:49:59,783 - jnpr.jsnapy.check - INFO - [34m************************ Command: show isis interface ************************
+2018-05-28 09:49:59,788 - jnpr.jsnapy.operator - INFO - [32mPASS | All "circuit-type" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:49:59,792 - jnpr.jsnapy.operator - INFO - [32mPASS | All "circuit-id" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:49:59,796 - jnpr.jsnapy.operator - INFO - [32mPASS | All "isis-interface-state-one" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:49:59,799 - jnpr.jsnapy.operator - INFO - [32mPASS | All "isis-interface-state-two" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:49:59,803 - jnpr.jsnapy.operator - INFO - [32mPASS | All "metric-one" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:49:59,807 - jnpr.jsnapy.operator - INFO - [32mPASS | All "metric-two" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:49:59,811 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in pre snapshot is present in post snapshot [ 3 matched ]
+2018-05-28 09:49:59,815 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 3 matched ]
+2018-05-28 09:49:59,815 - jnpr.jsnapy.check - INFO - Tests Included: check_isis_adjacency 
+2018-05-28 09:49:59,815 - jnpr.jsnapy.check - INFO - [34m************************ Command: show isis adjacency ************************
+2018-05-28 09:49:59,819 - jnpr.jsnapy.operator - INFO - [32mPASS | All "system-name" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 09:49:59,822 - jnpr.jsnapy.operator - INFO - [32mPASS | All "level" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 09:49:59,825 - jnpr.jsnapy.operator - INFO - [32mPASS | All "adjacency-state" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 09:49:59,827 - jnpr.jsnapy.operator - INFO - The ISIS holdtime for interface-name ['xe-2/0/0.0'] has changed from ['25'] to ['22'].
+2018-05-28 09:49:59,829 - jnpr.jsnapy.operator - INFO - The ISIS holdtime for interface-name ['ae0.0'] has changed from ['21'] to ['18'].
+2018-05-28 09:49:59,829 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "holdtime" is not same in pre and post snapshot [ 0 matched / 2 failed ]
+2018-05-28 09:49:59,832 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in pre snapshot is present in post snapshot [ 2 matched ]
+2018-05-28 09:49:59,835 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 2 matched ]
+2018-05-28 09:49:59,835 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe33 *****************************
+2018-05-28 09:49:59,835 - jnpr.jsnapy.check - INFO - Tests Included: check_bgp_summary 
+2018-05-28 09:49:59,836 - jnpr.jsnapy.check - INFO - [34m************************* Command: show bgp summary *************************
+2018-05-28 09:49:59,994 - jnpr.jsnapy.operator - INFO - [32mPASS | All "flap-count" is same in pre and post snapshot [ 115 matched ]
+2018-05-28 09:50:00,139 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-state" is same in pre and post snapshot [ 115 matched ]
+2018-05-28 09:50:00,285 - jnpr.jsnapy.operator - INFO - [32mPASS | All "route-queue-count" is same in pre and post snapshot [ 115 matched ]
+2018-05-28 09:50:00,426 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-address" in pre snapshot is present in post snapshot [ 115 matched ]
+2018-05-28 09:50:00,568 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-address" in post snapshot is present in pre snapshot [ 115 matched ]
+2018-05-28 09:50:00,912 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in pre snapshot is present in post snapshot [ 248 matched ]
+2018-05-28 09:50:01,260 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in post snapshot is present in pre snapshot [ 248 matched ]
+2018-05-28 09:50:01,613 - jnpr.jsnapy.operator - INFO - [32mPASS | All "active-prefix-count" is with in delta difference of 20% [ 248 matched ]
+2018-05-28 09:50:01,966 - jnpr.jsnapy.operator - INFO - [32mPASS | All "received-prefix-count" is with in delta difference of 20% [ 248 matched ]
+2018-05-28 09:50:02,327 - jnpr.jsnapy.operator - INFO - [32mPASS | All "accepted-prefix-count" is with in delta difference of 20% [ 248 matched ]
+2018-05-28 09:50:02,686 - jnpr.jsnapy.operator - INFO - [32mPASS | All "suppressed-prefix-count" is with in delta difference of 20% [ 248 matched ]
+2018-05-28 09:50:02,703 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in pre snapshot is present in post snapshot [ 10 matched ]
+2018-05-28 09:50:02,718 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in post snapshot is present in pre snapshot [ 10 matched ]
+2018-05-28 09:50:02,734 - jnpr.jsnapy.operator - INFO - [32mPASS | All "active-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:50:02,750 - jnpr.jsnapy.operator - INFO - [32mPASS | All "received-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:50:02,766 - jnpr.jsnapy.operator - INFO - [32mPASS | All "accepted-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:50:02,782 - jnpr.jsnapy.operator - INFO - [32mPASS | All "suppressed-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:50:02,784 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe33 *****************************
+2018-05-28 09:50:02,784 - jnpr.jsnapy.check - INFO - Tests Included: check_ldp_neighbor 
+2018-05-28 09:50:02,784 - jnpr.jsnapy.check - INFO - [34m************************* Command: show ldp neighbor *************************
+2018-05-28 09:50:02,791 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" is same in pre and post snapshot [ 5 matched ]
+2018-05-28 09:50:02,797 - jnpr.jsnapy.operator - INFO - [32mPASS | All "ldp-label-space-id" is same in pre and post snapshot [ 5 matched ]
+2018-05-28 09:50:02,803 - jnpr.jsnapy.operator - INFO - [32mPASS | All "ldp-neighbor-address" in pre snapshot is present in post snapshot [ 5 matched ]
+2018-05-28 09:50:02,809 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 5 matched ]
+2018-05-28 09:50:02,809 - jnpr.jsnapy.operator - INFO - [34m------------------------------- Final Result!! -------------------------------
+2018-05-28 09:50:02,809 - jnpr.jsnapy.operator - INFO - [31mcheck_isis_adjacency : Failed
+2018-05-28 09:50:02,809 - jnpr.jsnapy.operator - INFO - [32mcheck_bgp_summary : Passed
+2018-05-28 09:50:02,810 - jnpr.jsnapy.operator - INFO - [32mcheck_interface_status : Passed
+2018-05-28 09:50:02,810 - jnpr.jsnapy.operator - INFO - [32mcheck_isis_interface : Passed
+2018-05-28 09:50:02,810 - jnpr.jsnapy.operator - INFO - [32mcheck_ldp_neighbor : Passed
+2018-05-28 09:50:02,810 - jnpr.jsnapy.operator - INFO - [32mTotal No of tests passed: 38
+2018-05-28 09:50:02,810 - jnpr.jsnapy.operator - INFO - [31mTotal No of tests failed: 1 
+2018-05-28 09:50:02,810 - jnpr.jsnapy.operator - INFO - [31m[1mOverall Tests failed!!! 
+2018-05-28 09:57:33,028 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 09:57:33,566 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 09:57:33,566 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 09:57:34,617 - ncclient.transport.session - INFO - initialized: session-id=12617 | server_capabilities=<dictionary-keyiterator object at 0x7f761d648838>
+2018-05-28 09:57:34,695 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe33 *****************************
+2018-05-28 09:57:34,695 - jnpr.jsnapy.check - INFO - Tests Included: check_interface_status 
+2018-05-28 09:57:34,695 - jnpr.jsnapy.check - INFO - [34m******************* Command: show interfaces descriptions *******************
+2018-05-28 09:57:34,711 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is same in pre and post snapshot [ 12 matched ]
+2018-05-28 09:57:34,726 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is same in pre and post snapshot [ 12 matched ]
+2018-05-28 09:57:34,849 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is same in pre and post snapshot [ 117 matched ]
+2018-05-28 09:57:34,975 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is same in pre and post snapshot [ 117 matched ]
+2018-05-28 09:57:34,975 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe33 *****************************
+2018-05-28 09:57:34,976 - jnpr.jsnapy.check - INFO - Tests Included: check_isis_interface 
+2018-05-28 09:57:34,976 - jnpr.jsnapy.check - INFO - [34m************************ Command: show isis interface ************************
+2018-05-28 09:57:34,981 - jnpr.jsnapy.operator - INFO - [32mPASS | All "circuit-type" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:57:34,984 - jnpr.jsnapy.operator - INFO - [32mPASS | All "circuit-id" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:57:34,988 - jnpr.jsnapy.operator - INFO - [32mPASS | All "isis-interface-state-one" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:57:34,992 - jnpr.jsnapy.operator - INFO - [32mPASS | All "isis-interface-state-two" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:57:34,996 - jnpr.jsnapy.operator - INFO - [32mPASS | All "metric-one" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:57:35,000 - jnpr.jsnapy.operator - INFO - [32mPASS | All "metric-two" is same in pre and post snapshot [ 3 matched ]
+2018-05-28 09:57:35,004 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in pre snapshot is present in post snapshot [ 3 matched ]
+2018-05-28 09:57:35,008 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 3 matched ]
+2018-05-28 09:57:35,008 - jnpr.jsnapy.check - INFO - Tests Included: check_isis_adjacency 
+2018-05-28 09:57:35,008 - jnpr.jsnapy.check - INFO - [34m************************ Command: show isis adjacency ************************
+2018-05-28 09:57:35,012 - jnpr.jsnapy.operator - INFO - [32mPASS | All "system-name" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 09:57:35,015 - jnpr.jsnapy.operator - INFO - [32mPASS | All "level" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 09:57:35,018 - jnpr.jsnapy.operator - INFO - [32mPASS | All "adjacency-state" is same in pre and post snapshot [ 2 matched ]
+2018-05-28 09:57:35,020 - jnpr.jsnapy.operator - INFO - The ISIS holdtime for interface-name ['xe-2/0/0.0'] has changed from ['23'] to ['19'].
+2018-05-28 09:57:35,022 - jnpr.jsnapy.operator - INFO - The ISIS holdtime for interface-name ['ae0.0'] has changed from ['22'] to ['25'].
+2018-05-28 09:57:35,023 - jnpr.jsnapy.operator - INFO - [31mFAIL | All "holdtime" is not same in pre and post snapshot [ 0 matched / 2 failed ]
+2018-05-28 09:57:35,025 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in pre snapshot is present in post snapshot [ 2 matched ]
+2018-05-28 09:57:35,028 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 2 matched ]
+2018-05-28 09:57:35,028 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe33 *****************************
+2018-05-28 09:57:35,028 - jnpr.jsnapy.check - INFO - Tests Included: check_bgp_summary 
+2018-05-28 09:57:35,029 - jnpr.jsnapy.check - INFO - [34m************************* Command: show bgp summary *************************
+2018-05-28 09:57:35,187 - jnpr.jsnapy.operator - INFO - [32mPASS | All "flap-count" is same in pre and post snapshot [ 115 matched ]
+2018-05-28 09:57:35,330 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-state" is same in pre and post snapshot [ 115 matched ]
+2018-05-28 09:57:35,475 - jnpr.jsnapy.operator - INFO - [32mPASS | All "route-queue-count" is same in pre and post snapshot [ 115 matched ]
+2018-05-28 09:57:35,617 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-address" in pre snapshot is present in post snapshot [ 115 matched ]
+2018-05-28 09:57:35,760 - jnpr.jsnapy.operator - INFO - [32mPASS | All "peer-address" in post snapshot is present in pre snapshot [ 115 matched ]
+2018-05-28 09:57:36,103 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in pre snapshot is present in post snapshot [ 248 matched ]
+2018-05-28 09:57:36,448 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in post snapshot is present in pre snapshot [ 248 matched ]
+2018-05-28 09:57:36,801 - jnpr.jsnapy.operator - INFO - [32mPASS | All "active-prefix-count" is with in delta difference of 20% [ 248 matched ]
+2018-05-28 09:57:37,156 - jnpr.jsnapy.operator - INFO - [32mPASS | All "received-prefix-count" is with in delta difference of 20% [ 248 matched ]
+2018-05-28 09:57:37,510 - jnpr.jsnapy.operator - INFO - [32mPASS | All "accepted-prefix-count" is with in delta difference of 20% [ 248 matched ]
+2018-05-28 09:57:37,865 - jnpr.jsnapy.operator - INFO - [32mPASS | All "suppressed-prefix-count" is with in delta difference of 20% [ 248 matched ]
+2018-05-28 09:57:37,881 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in pre snapshot is present in post snapshot [ 10 matched ]
+2018-05-28 09:57:37,897 - jnpr.jsnapy.operator - INFO - [32mPASS | All "name" in post snapshot is present in pre snapshot [ 10 matched ]
+2018-05-28 09:57:37,913 - jnpr.jsnapy.operator - INFO - [32mPASS | All "active-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:57:37,929 - jnpr.jsnapy.operator - INFO - [32mPASS | All "received-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:57:37,945 - jnpr.jsnapy.operator - INFO - [32mPASS | All "accepted-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:57:37,962 - jnpr.jsnapy.operator - INFO - [32mPASS | All "suppressed-prefix-count" is with in delta difference of 20% [ 10 matched ]
+2018-05-28 09:57:37,964 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe33 *****************************
+2018-05-28 09:57:37,964 - jnpr.jsnapy.check - INFO - Tests Included: check_ldp_neighbor 
+2018-05-28 09:57:37,964 - jnpr.jsnapy.check - INFO - [34m************************* Command: show ldp neighbor *************************
+2018-05-28 09:57:37,971 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" is same in pre and post snapshot [ 5 matched ]
+2018-05-28 09:57:37,977 - jnpr.jsnapy.operator - INFO - [32mPASS | All "ldp-label-space-id" is same in pre and post snapshot [ 5 matched ]
+2018-05-28 09:57:37,983 - jnpr.jsnapy.operator - INFO - [32mPASS | All "ldp-neighbor-address" in pre snapshot is present in post snapshot [ 5 matched ]
+2018-05-28 09:57:37,989 - jnpr.jsnapy.operator - INFO - [32mPASS | All "interface-name" in post snapshot is present in pre snapshot [ 5 matched ]
+2018-05-28 09:57:37,989 - jnpr.jsnapy.operator - INFO - [34m------------------------------- Final Result!! -------------------------------
+2018-05-28 09:57:37,989 - jnpr.jsnapy.operator - INFO - [31mcheck_isis_adjacency : Failed
+2018-05-28 09:57:37,990 - jnpr.jsnapy.operator - INFO - [32mcheck_bgp_summary : Passed
+2018-05-28 09:57:37,990 - jnpr.jsnapy.operator - INFO - [32mcheck_interface_status : Passed
+2018-05-28 09:57:37,990 - jnpr.jsnapy.operator - INFO - [32mcheck_isis_interface : Passed
+2018-05-28 09:57:37,990 - jnpr.jsnapy.operator - INFO - [32mcheck_ldp_neighbor : Passed
+2018-05-28 09:57:37,990 - jnpr.jsnapy.operator - INFO - [32mTotal No of tests passed: 38
+2018-05-28 09:57:37,990 - jnpr.jsnapy.operator - INFO - [31mTotal No of tests failed: 1 
+2018-05-28 09:57:37,991 - jnpr.jsnapy.operator - INFO - [31m[1mOverall Tests failed!!! 
+2018-05-28 18:07:41,987 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:07:42,340 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:07:42,340 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:07:43,326 - ncclient.transport.session - INFO - initialized: session-id=16591 | server_capabilities=<dictionary-keyiterator object at 0x7f734001d838>
+2018-05-28 18:07:43,406 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:07:43,928 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:07:44,044 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:07:44,110 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:07:44,403 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-28 18:07:45,848 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:07:46,374 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:07:46,374 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:07:47,632 - ncclient.transport.session - INFO - initialized: session-id=16597 | server_capabilities=<dictionary-keyiterator object at 0x7f463774f838>
+2018-05-28 18:07:47,706 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:07:48,128 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:07:48,244 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:07:48,360 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:07:48,649 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-28 18:09:14,743 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:09:15,270 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:09:15,270 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:09:16,281 - ncclient.transport.session - INFO - initialized: session-id=16652 | server_capabilities=<dictionary-keyiterator object at 0x7fd173c27838>
+2018-05-28 18:09:16,362 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:09:16,992 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:09:17,108 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:09:17,224 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:09:17,513 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-28 18:09:18,365 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:09:18,993 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:09:18,993 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:09:20,004 - ncclient.transport.session - INFO - initialized: session-id=16658 | server_capabilities=<dictionary-keyiterator object at 0x7fac23c37838>
+2018-05-28 18:09:20,092 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:09:20,518 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:09:20,634 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:09:20,750 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:09:20,988 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-28 18:11:30,190 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:11:30,545 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:11:30,545 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:11:31,582 - ncclient.transport.session - INFO - initialized: session-id=16715 | server_capabilities=<dictionary-keyiterator object at 0x7fc5257c1838>
+2018-05-28 18:11:31,659 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:11:32,331 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:11:32,447 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:11:32,563 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:11:32,851 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-28 18:11:33,830 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:11:34,002 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:11:34,002 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:11:35,000 - ncclient.transport.session - INFO - initialized: session-id=16721 | server_capabilities=<dictionary-keyiterator object at 0x7f11fb21d838>
+2018-05-28 18:11:35,073 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:11:35,444 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:11:35,610 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:11:35,725 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:11:36,016 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-28 18:12:27,864 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:12:28,385 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:12:28,385 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:12:29,407 - ncclient.transport.session - INFO - initialized: session-id=16774 | server_capabilities=<dictionary-keyiterator object at 0x7f3f2bd4b838>
+2018-05-28 18:12:29,480 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:12:30,001 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:12:30,117 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:12:30,233 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:12:30,572 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-28 18:12:31,915 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-28 18:12:32,088 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-28 18:12:32,089 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-28 18:12:33,285 - ncclient.transport.session - INFO - initialized: session-id=16780 | server_capabilities=<dictionary-keyiterator object at 0x7fdb469d8838>
+2018-05-28 18:12:33,364 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-28 18:12:33,885 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-28 18:12:34,001 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-28 18:12:34,116 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-28 18:12:34,355 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-29 09:05:59,699 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-29 09:06:00,050 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-29 09:06:00,051 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-29 09:06:01,244 - ncclient.transport.session - INFO - initialized: session-id=18780 | server_capabilities=<dictionary-keyiterator object at 0x7f664fcc3838>
+2018-05-29 09:06:01,318 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-29 09:06:01,789 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-29 09:06:01,905 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-29 09:06:02,020 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-29 09:06:02,409 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-29 09:06:03,233 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-29 09:06:03,403 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-29 09:06:03,404 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-29 09:06:04,444 - ncclient.transport.session - INFO - initialized: session-id=18786 | server_capabilities=<dictionary-keyiterator object at 0x7f3435fc4838>
+2018-05-29 09:06:04,518 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-29 09:06:04,989 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-29 09:06:05,109 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-29 09:06:05,224 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-29 09:06:05,463 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-29 09:09:34,772 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-29 09:09:35,115 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-29 09:09:35,115 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-29 09:09:36,308 - ncclient.transport.session - INFO - initialized: session-id=18839 | server_capabilities=<dictionary-keyiterator object at 0x7fd380a64838>
+2018-05-29 09:09:36,382 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-29 09:09:36,853 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-29 09:09:36,969 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-29 09:09:37,084 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-29 09:09:37,530 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 
+2018-05-29 09:09:38,513 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-29 09:09:38,686 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-29 09:09:38,686 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-29 09:09:39,734 - ncclient.transport.session - INFO - initialized: session-id=18845 | server_capabilities=<dictionary-keyiterator object at 0x7f30dee73838>
+2018-05-29 09:09:39,807 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-29 09:09:40,481 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis interface 
+2018-05-29 09:09:40,597 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show isis adjacency 
+2018-05-29 09:09:40,762 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show bgp summary 
+2018-05-29 09:09:41,052 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show ldp neighbor 

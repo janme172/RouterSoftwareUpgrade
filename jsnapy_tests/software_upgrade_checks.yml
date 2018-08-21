@@ -1,0 +1,92 @@
+tests_include:
+- show_interfaces_descriptions
+#- show_interfaces_terse
+#- show_isis_adjacency
+#- show_ldp_session_extensive
+#- show_bgp_summary
+#- show_pim_interfaces
+
+
+show_interfaces_descriptions:
+- command: show interfaces descriptions
+- iterate:
+    id: name
+    xpath: physical-interface
+    tests:
+    - no-diff: admin-status
+      err: '   ERROR: the admin status of interface {{id_0}} has changed: PRE: {{pre["admin-status"]}}
+        / POST: {{post["admin-status"]}}'
+      info: 'Admin status have not changed for physical interface {{ pre["name"] }}.'
+    - no-diff: oper-status
+      err: '   ERROR: the oper status of interface {{id_0}} has changed: PRE: {{pre["oper-status"]}}
+        / POST: {{post["oper-status"]}}'
+      info: 'Operational status have not changed for  physical interface {{ pre["name"] }}.'
+
+show_interfaces_terse:
+- command: show interfaces terse
+- iterate:
+    id: name
+    tests:
+    - err: '   ERROR: The interface is in different operational status than before:
+        {{id_0}}'
+      info: Checking logical interfaces [logical-interface/oper-status]
+      no-diff: oper-status
+    xpath: physical-interface/logical-interface
+- iterate:
+    id: name
+    tests:
+    - err: '   ERROR: The interface is in different operational status than before:
+        {{id_0}}'
+      info: Checking physical interfaces [physical-interface/oper-status]
+      no-diff: oper-status
+    xpath: physical-interface
+
+show_isis_adjacency:
+- command: show isis adjacency
+- iterate:
+    id: ./interface-name
+    tests:
+    - err: ' ERROR: the ISIS neighbour on interface {{id_0}} has changed from {{pre["system-name"]}}
+        to {{post["system-name"]}}.'
+      info: Checking the ISIS neighbour ...
+      no-diff: system-name
+    xpath: isis-adjacency 
+
+show_ldp_session_extensive:
+- command: show ldp session extensive
+- iterate:
+    id: ldp-neighbor-address
+    tests:
+    - err: '   ERROR: the LDP session with the neighbour {{id_0}} has is missing.'
+      info: Checking for missing LDP sessions [ldp-neighbor-address]
+      list-not-less: ldp-neighbor-address
+    xpath: ldp-session
+
+show_bgp_summary:
+- command: show bgp summary
+- iterate:
+    tests:
+    - err: ' ERROR: the number of BGP peers has changed from {{pre["peer-count"]}}
+        to {{post["peer-count"]}}.'
+      info: Checking the number of BGP peers ...
+      no-diff: peer-count
+    xpath: .
+- iterate:
+    id: peer-address, peer-as
+    tests:
+    - err: ' ERROR: the BGP peer {{id_0}} (ASN {{id_1}}) is not in Established state.'
+      info: Checking if the BGP peers are in Established state ...
+      is-equal: peer-state, Established
+    xpath: bgp-peer
+
+      
+show_pim_interfaces:
+  - command:  show pim interfaces
+  - iterate:
+      xpath: pim-interface[normalize-space(pim-interface-name)!='lo0.0']
+      id: pim-interface-name
+      tests:
+        - is-equal: neighbor-count, 1
+          info: "PASSED! Interface {{id_0}} PIM neighbor count  {{post['neighbor-count']}}"
+          err: "FAILED! Interface {{id_0}} PIM neighbor count {{post['neighbor-count']}}"
+       

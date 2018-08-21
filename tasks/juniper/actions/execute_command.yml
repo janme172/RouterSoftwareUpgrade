@@ -1,0 +1,7 @@
+---
+- name: "{{ task_name if (task_name is defined) else ('Execute Command - ' + command) }}"
+  juniper_junos_command:
+    commands:
+      - "{{ command }}"
+    timeout: "{{ timeout | default('180') }}" 
+    provider: "{{ provider | default({}) }}" 

@@ -1,0 +1,60 @@
+check_isis_adjacency:
+  - command: show isis adjacency
+  - iterate:
+      id: interface-name
+      xpath: //isis-adjacency-information/isis-adjacency
+      tests:
+        - no-diff: system-name
+          err: 'The ISIS neighbour(system-name) for interface-name {{id_0}} has changed from {{pre["system-name"]}} to {{post["system-name"]}}.'
+          info:  'The ISIS neighbour(system-name) for interface-name {{id_0}} has not changed.'
+        - no-diff: level
+          err: 'The ISIS level for interface-name {{id_0}} has changed from {{pre["level"]}} to {{post["level"]}}.'
+          info:  'The ISIS level for interface-name {{id_0}} has not changed.'
+        - no-diff: adjacency-state
+          err: 'The ISIS adjacency-state for interface-name {{id_0}} has changed from {{pre["adjacency-state"]}} to {{post["adjacency-state"]}}.'
+          info:  'The ISIS adjacency-state for interface-name {{id_0}} has not changed.'
+        - no-diff: holdtime
+          err: 'The ISIS holdtime for interface-name {{id_0}} has changed from {{pre["holdtime"]}} to {{post["holdtime"]}}.'
+          info:  'The ISIS holdtime for interface-name {{id_0}} has not changed.'
+        - list-not-less: interface-name
+          err: 'The isis-adjacency for interface-name {{id_0}} is missing now.'
+          info: 'The isis-adjacency for interface-name {{id_0}} is present.'
+        - list-not-more: interface-name
+          err: 'The isis-adjacency for interface-name {{id_0}} was not configured before.'
+          info: 'The isis-adjacency for interface-name {{id_0}} was configured before.'
+
+check_isis_interface:
+  - command: show isis interface
+  - iterate:
+      id: interface-name
+      xpath: //isis-interface-information/isis-interface
+      tests:
+        - no-diff: circuit-type
+          err: 'The circuit-type for interface-name {{id_0}} has changed from {{pre["circuit-type"]}} to {{post["circuit-type"]}}.'
+          info: 'The circuit-type for interface-name {{id_0}} has not changed.'
+        - no-diff: circuit-id
+          err: 'The circuit-id for interface-name {{id_0}} has changed from {{pre["circuit-id"]}} to {{post["circuit-id"]}}.'
+          info: 'The circuit-id for interface-name {{id_0}} has not changed.'
+        - no-diff: isis-interface-state-one
+          err: 'The isis-interface-state-one for interface-name {{id_0}} has changed from {{pre["isis-interface-state-one"]}} to {{post["isis-interface-state-one"]}}.'
+          info: 'The isis-interface-state-one for interface-name {{id_0}} has not changed.'
+        - no-diff: isis-interface-state-two
+          err: 'The isis-interface-state-two for interface-name {{id_0}} has changed from {{pre["isis-interface-state-two"]}} to {{post["isis-interface-state-two"]}}.'
+          info: 'The isis-interface-state-two for interface-name {{id_0}} has not changed.'
+        - no-diff: metric-one
+          err: 'The metric-one for interface-name {{id_0}} has changed from {{pre["metric-one"]}} to {{post["metric-one"]}}.'
+          info: 'The metric-one for interface-name {{id_0}} has not changed.'
+        - no-diff: metric-two
+          err: 'The metric-two for interface-name {{id_0}} has changed from {{pre["metric-two"]}} to {{post["metric-two"]}}.'
+          info: 'The metric-two for interface-name {{id_0}} has not changed.'
+        - list-not-less: interface-name
+          err: 'The ISIS interface(interface-name) {{id_0}} is missing now.'
+          info: 'The ISIS interface {{id_0}} is present.'
+        - list-not-more: interface-name
+          err: 'The ISIS interface(interface-name) {{id_0}} was not configured before.'
+          info: 'The ISIS interface(interface-name) {{id_0}} was configured before.'
+
+# Include the tests to run
+tests_include:
+- check_isis_interface
+- check_isis_adjacency

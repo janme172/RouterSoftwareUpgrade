@@ -1,0 +1,8 @@
+---
+# This task gathers the facts from junos device with configuration in provided format.
+# It accepts following parameters:(parameter: default value) 
+#    juniper_junos_facts_config_format: 'xml'
+- name: Gather facts from Junos devices with configuration in provided format
+  juniper_junos_facts:
+    config_format: juniper_junos_facts_config_format | default('xml')
+    provider: "{{ provider | default({}) }}" 

@@ -1,0 +1,4 @@
+---
+
+- import_playbook: base_individual_actions_juniper.yml
+

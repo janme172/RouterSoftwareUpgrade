@@ -1,0 +1,13 @@
+---
+- hosts: all
+  gather_facts: no
+  connection: local
+  roles:
+    - Juniper.junos
+  tasks:
+    - juniper_junos_command:
+        commands: ['show chassis routing-engine', 'show version']
+        dest_dir: 'janme/'
+        formats: ['xml', 'text'] 
+
+      

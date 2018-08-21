@@ -1,0 +1,23 @@
+validate_interface_status:
+- command: show interfaces descriptions
+
+- iterate:
+    id: name
+    xpath: physical-interface
+    tests:
+    - is-equal: admin-status,  up 
+      err: 'The admin status of  physical-interface  {{ id_0 }} is not "up". It is "{{ pre["admin-status"] }}".'
+      info: 'Admin status for  physical-interface  {{ id_0 }} is "up".'
+    - is-equal: oper-status,  up 
+      err: 'The oper status of  physical-interface  {{ id_0 }} is not "up". It is "{{ pre["oper-status"] }}".'
+      info: 'Oper status for   physical-interface  {{ id_0 }} is "up"' 
+- iterate:
+    id: name
+    xpath: logical-interface
+    tests:
+    - is-equal: admin-status,  up 
+      err: 'The admin status of  logical-interface  {{ id_0 }} is not "up". It is "{{ pre["admin-status"] }}".'
+      info: 'Admin status for  logical-interface  {{ id_0 }} is "up".'
+    - is-equal: oper-status,  up 
+      err: 'The oper status of  logical-interface  {{ id_0 }} is not "up". It is "{{ pre["oper-status"] }}".'
+      info: 'Oper status for   logical-interface  {{ id_0 }} is "up"' 

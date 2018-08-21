@@ -1,0 +1,7 @@
+hosts:
+  - device: test2nqe31 
+    username : ansible
+tests:
+  - jsnapy_tests/show_interface_descriptions.yml 
+#  - jsnapy_tests/show_gbp_summary.yml
+#  - check_interface_admin_status.yml

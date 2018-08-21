@@ -1,0 +1,15 @@
+validate_interface_status:
+- command: show interfaces descriptions
+{% for interface_node in test_interface_nodes | default(['physical-interface', 'logical-interface'])  %}
+{% raw %}
+- iterate:
+    id: name
+    xpath: {% endraw %}{{ interface_node }}{% raw %}
+    tests:
+    - is-equal: admin-status, {% endraw %} {{ test_expected_admin_status | default('up') }} {% raw %}
+      err: 'The admin status of {% endraw %} {{ interface_node }} {% raw %} {{ id_0 }} is not "up". It is "{{ pre["admin-status"] }}".'
+      info: 'Admin status for {% endraw %} {{ interface_node }} {% raw %} {{ id_0 }} is "up".'
+    - is-equal: oper-status, {% endraw %} {{ test_expected_oper_status | default('up') }} {% raw %}
+      err: 'The oper status of {% endraw %} {{ interface_node }} {% raw %} {{ id_0 }} is not "up". It is "{{ pre["oper-status"] }}".'
+      info: 'Oper status for  {% endraw %} {{ interface_node }} {% raw %} {{ id_0 }} is "up"' {% endraw %}
+{% endfor %}

@@ -1,0 +1,2 @@
+---
+- import_playbook: base_re_switchover_juniper.yml

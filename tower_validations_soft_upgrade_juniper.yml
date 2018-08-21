@@ -1,0 +1,3 @@
+---
+- import_playbook: base_validations_soft_upgrade_juniper.yml
+

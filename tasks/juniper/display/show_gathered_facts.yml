@@ -1,0 +1,5 @@
+---
+# This shows the gathered facts/info of junos device
+- name: Shows the already gathered junos facts on screen
+  debug:
+    var: ansible_facts.junos

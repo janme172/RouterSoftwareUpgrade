@@ -1,0 +1,5 @@
+---
+# Abort an task with custom message.
+- name: "Aborting - {{ abort_task_name | default('Play for host '+ inventory_hostname) }}"
+  fail:
+    msg: "{{ abort_message | default('Oops!!!. No message to display.') }}"

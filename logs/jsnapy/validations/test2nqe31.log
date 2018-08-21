@@ -1,0 +1,70 @@
+2018-05-29 08:32:59,355 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-29 08:32:59,878 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-29 08:32:59,878 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-29 08:33:00,838 - ncclient.transport.session - INFO - initialized: session-id=13182 | server_capabilities=<dictionary-keyiterator object at 0x7f1f40926838>
+2018-05-29 08:33:00,859 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-29 08:33:01,338 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe31 *****************************
+2018-05-29 08:33:01,338 - jnpr.jsnapy.check - INFO - Tests Included: validate_interface_status 
+2018-05-29 08:33:01,338 - jnpr.jsnapy.check - INFO - [34m******************* Command: show interfaces descriptions *******************
+2018-05-29 08:33:01,346 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is equal to "up" [ 5 matched ]
+2018-05-29 08:33:01,353 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is equal to "up" [ 5 matched ]
+2018-05-29 08:33:01,581 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is equal to "up" [ 202 matched ]
+2018-05-29 08:33:01,793 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is equal to "up" [ 202 matched ]
+2018-05-29 08:33:01,794 - jnpr.jsnapy.operator - INFO - [34m------------------------------- Final Result!! -------------------------------
+2018-05-29 08:33:01,794 - jnpr.jsnapy.operator - INFO - [32mvalidate_interface_status : Passed
+2018-05-29 08:33:01,794 - jnpr.jsnapy.operator - INFO - [32mTotal No of tests passed: 4
+2018-05-29 08:33:01,794 - jnpr.jsnapy.operator - INFO - [31mTotal No of tests failed: 0 
+2018-05-29 08:33:01,794 - jnpr.jsnapy.operator - INFO - [32m[1mOverall Tests passed!!! 
+2018-05-29 08:34:44,351 - ncclient.transport.ssh - INFO - Connected (version 2.0, client OpenSSH_7.2)
+2018-05-29 08:34:44,879 - ncclient.transport.ssh - INFO - Auth banner: 
+***************************************
+*                                     *
+*  This Node is TDC Net Property      *
+*                                     *
+*   UNAUTHORIZED ACCESS PROHIBITED    *
+*                                     *
+***************************************
+This system is for the use of authorized users only. Individuals using this
+system without authority, or in excess of their authority, are subject to
+having all of their activities on this system monitored and recorded by
+system personnel. In the course of monitoring individuals improperly using
+this system, or in the course of system maintenance, the activities of
+authorized users may also be monitored. Anyone using this system expressly
+consents to such monitoring and is advised that if such monitoring reveals
+possible evidence of criminal activity, system personnel may provide the
+evidence of such monitoring to law enforcement officials.
+
+
+2018-05-29 08:34:44,880 - ncclient.transport.ssh - INFO - Authentication (publickey) successful!
+2018-05-29 08:34:45,787 - ncclient.transport.session - INFO - initialized: session-id=13230 | server_capabilities=<dictionary-keyiterator object at 0x7f733542c838>
+2018-05-29 08:34:45,808 - jnpr.jsnapy.snap - INFO - [34mTaking snapshot of COMMAND: show interfaces descriptions 
+2018-05-29 08:34:46,438 - jnpr.jsnapy.check - INFO - [34m***************************** Device: test2nqe31 *****************************
+2018-05-29 08:34:46,438 - jnpr.jsnapy.check - INFO - Tests Included: validate_interface_status 
+2018-05-29 08:34:46,438 - jnpr.jsnapy.check - INFO - [34m******************* Command: show interfaces descriptions *******************
+2018-05-29 08:34:46,446 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is equal to "up" [ 5 matched ]
+2018-05-29 08:34:46,453 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is equal to "up" [ 5 matched ]
+2018-05-29 08:34:46,664 - jnpr.jsnapy.operator - INFO - [32mPASS | All "admin-status" is equal to "up" [ 202 matched ]
+2018-05-29 08:34:46,883 - jnpr.jsnapy.operator - INFO - [32mPASS | All "oper-status" is equal to "up" [ 202 matched ]
+2018-05-29 08:34:46,884 - jnpr.jsnapy.operator - INFO - [34m------------------------------- Final Result!! -------------------------------
+2018-05-29 08:34:46,884 - jnpr.jsnapy.operator - INFO - [32mvalidate_interface_status : Passed
+2018-05-29 08:34:46,884 - jnpr.jsnapy.operator - INFO - [32mTotal No of tests passed: 4
+2018-05-29 08:34:46,884 - jnpr.jsnapy.operator - INFO - [31mTotal No of tests failed: 0 
+2018-05-29 08:34:46,885 - jnpr.jsnapy.operator - INFO - [32m[1mOverall Tests passed!!! 

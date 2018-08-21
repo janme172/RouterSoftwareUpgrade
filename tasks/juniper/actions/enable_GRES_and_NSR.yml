@@ -1,0 +1,12 @@
+---
+- name: "Enable GRES and NSR - {{ task_name | default('')}}"
+  juniper_junos_config:
+    timeout: 180
+    config_mode: "private"
+    load: "set"
+    lines:
+      - "set routing-options nonstop-routing"
+      - "set chassis redundancy graceful-switchover"
+#      - "activate system commit"
+      - "set system commit synchronize"
+    provider: "{{ provider | default({}) }}"
