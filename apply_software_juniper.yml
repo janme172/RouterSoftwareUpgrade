@@ -55,7 +55,7 @@
           run_once: yes
           when: (resp_url_validation.content_type not in valid_content_types_for_url) or ( hostvars[inventory_hostname]["ansible_run_tags"]|count == 1 and hostvars[inventory_hostname]["ansible_run_tags"] == ['all']) or ( hostvars[inventory_hostname]["ansible_run_tags"]|count == 2 and "disable_gres_and_nsr" not in hostvars[inventory_hostname]["ansible_run_tags"]) or ( hostvars[inventory_hostname]["ansible_run_tags"]|count > 2) or (hostvars[inventory_hostname]["ansible_skip_tags"] != []) or (hostvars[inventory_hostname]["ansible_run_tags"]|difference(valid_tags) != [])
           any_errors_fatal: yes
-
+      
       tags:
         - always
 
@@ -72,7 +72,7 @@
           run_once: yes
           when: user_confirmation.user_input not in ['yes', 'Yes', 'YES']
           any_errors_fatal: yes
-          
+      when: run_mode == 'cli'    
       tags:
         - always
 
