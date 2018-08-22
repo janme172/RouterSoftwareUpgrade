@@ -43,6 +43,8 @@
 
     - include_tasks: tasks/set_provider_details.yml
       when: run_mode == 'cli'
+      tags:
+        - always
 
     - block:
         - name: Validate if URL exists
@@ -64,7 +66,7 @@
         - always
 
     - block:
-        - name: User Confirmation
+        - name: User Confirmation - CLI Mode
           pause:
             prompt: "\e[32m\e[1m\n-------------------\nPlaybook Details: \n-------------------\n\nDevices:\n--------\n\t{{ hostvars.keys() | sort | join('\n\t') }}\n\nMajor Actions:\n--------------\n\t=> {% if hostvars[inventory_hostname]['ansible_run_tags'][0] == 'apply_to_backup' %}{{  actions_apply_to_backup| join('\n\t=> ') }}{% elif hostvars[inventory_hostname]['ansible_run_tags'][0] == 'apply_to_master' %}{{  actions_apply_to_master| join('\n\t=> ') }}{% elif hostvars[inventory_hostname]['ansible_run_tags'][0] == 'apply_to_both' %}{{  actions_apply_to_both| join('\n\t=> ') }}{% endif %}\n\n\n\e[5mDo you want to continue? (YES/NO)"
           register: user_confirmation
@@ -81,9 +83,12 @@
         - always
 
 
-    # Set Date and logging details
-    - import_tasks: tasks/common/set/fact/start_date_and_time.yml
-    - import_tasks: tasks/common/set/fact/logging_details.yml
+    - block:
+        # Set Date and logging details
+        - import_tasks: tasks/common/set/fact/start_date_and_time.yml
+        - import_tasks: tasks/common/set/fact/logging_details.yml
+      tags:
+        - always
 
   tasks:
  
