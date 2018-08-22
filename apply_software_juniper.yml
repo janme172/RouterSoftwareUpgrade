@@ -24,6 +24,7 @@
     - prompt: 'Checksum for the package'
       name: 'pkg_checksum'
       private: no
+
   vars_files:
     - var_files/default_config.yml
 
@@ -33,12 +34,15 @@
     actions_apply_to_backup: ['Abort for Single RE devices', 'Copy the package to device', 'Delete old package files from both routing engines if any.', 'Perform request system storage cleanup', 'Apply software to backup RE', 'Reboot']
     actions_apply_to_master: ['Copy the package to device', 'Delete old package files from both routing engines if any.', 'Perform request system storage cleanup', 'Apply software to master RE', 'Reboot']
     actions_apply_to_both: ['Abort for Single RE devices', 'Copy the package to device', 'Delete old package files from both routing engines if any.', 'Perform request system storage cleanup', 'Apply software to both REs', 'Reboot']
-    provider_details:
-      username: "{{ device_user_name }}"
-      password: "{{ device_user_passwd  }}"
-      host: "{{ inventory_hostname }}"
+    provider_details: {} # Default provider details
+#      username: "{{ device_user_name }}"
+#      password: "{{ device_user_passwd  }}"
+#      host: "{{ inventory_hostname }}"
   
   pre_tasks:
+
+    - include_tasks: tasks/set_provider_details.yml
+      when: run_mode == 'cli'
 
     - block:
         - name: Validate if URL exists
@@ -147,6 +151,7 @@
     - name: "Delete the old package files on device. All '.tgz' files in /var/tmp/."
       juniper_junos_command:
         commands: ['file delete re0:/var/tmp/*tgz', 'file delete re1:/var/tmp/*tgz']
+        provider: "{{ provider_details }}"
       tags:
         - never
         - apply_to_backup
@@ -156,6 +161,7 @@
     - import_tasks: tasks/juniper/actions/disable_GRES_and_NSR.yml
       vars:
         task_name: "Before applying the software to {% if 'apply_to_backup' in hostvars[inventory_hostname]['ansible_run_tags'] %}Backup RE{% elif 'apply_to_master' in hostvars[inventory_hostname]['ansible_run_tags'] %}Master RE{% elif 'apply_to_both' in hostvars[inventory_hostname]['ansible_run_tags'] %}Both REs{%endif%}"
+        provider: "{{ provider_details }}"
  
 
     - name: Install package on Master RE
@@ -167,6 +173,7 @@
         reboot: yes
         reboot_pause: 50
         timeout: 1200
+        provider: "{{ provider_details }}"
       tags:
         - never
         - apply_to_master
@@ -180,6 +187,7 @@
         reboot: yes
         reboot_pause: 50
         timeout: 1200
+        provider: "{{ provider_details }}"
       tags:
         - never
         - apply_to_backup
@@ -192,6 +200,7 @@
         reboot: yes
         reboot_pause: 50
         timeout: 1200
+        provider: "{{ provider_details }}"
       tags:
         - never
         - apply_to_both
