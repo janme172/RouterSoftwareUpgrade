@@ -99,7 +99,7 @@ class CallbackModule(CallbackBase):
 
     def display_gathered_fact_table(self):
         if self.host_facts:
-            self._display.display('########## Table: Device Info ####################')
+            self._display.display('\n########## Table: Device Info ####################')
         if self.playbook_filename in ('PLAY BOOK NAMES HAVING DIFFRENT FORMAT TO DISPLAY'):
             pass # LOGIC FOR DISPLAYING FACTS IN DIFFERENT FORMAT FOR SOME PLAYBOOKS
         else:
@@ -148,4 +148,4 @@ class CallbackModule(CallbackBase):
                     if not err_msg:
                         err_msg = 'Unable to get the details'
                     table_rows.append([host, '', '', '', '', '', err_msg])
-            self._display.display(data2rst(table_rows, spans=spans, use_headers=True))
+            self._display.display('\n'+data2rst(table_rows, spans=spans, use_headers=True))
